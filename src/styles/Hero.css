@@ -1,16 +1,104 @@
+/* Hero Section - Editorial Portrait Background */
+
 .hero {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  background: linear-gradient(135deg, var(--black) 0%, var(--near-black) 100%);
   padding: var(--space-xl) 0;
+  overflow: hidden;
+  
+  /* Portrait Editorial Background */
+  background-image: url('/images/hero-editorial.jpg');
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  background-color: #000000; /* Fallback solid black */
+}
+
+/* Dark Overlay (70-80% black) for Text Readability */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+/* Subtle Blur for Premium Look */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 1;
+}
+
+/* Side Fade to Black (for portrait image in wide container) */
+.hero .hero__side-fade-left,
+.hero .hero__side-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero .hero__side-fade-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.hero .hero__side-fade-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.8) 30%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* Bottom Gradient Fade to Black (smooth transition to next section) */
+.hero .hero__bottom-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero__content {
   text-align: center;
   z-index: 2;
+  position: relative;
 }
 
 .hero__text {
@@ -21,15 +109,21 @@
 .hero__title {
   margin-bottom: var(--space-md);
   animation-delay: 0.2s;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 3;
 }
 
 .hero__subtitle {
   font-size: clamp(1rem, 2.5vw, 1.5rem);
   font-weight: 300;
   letter-spacing: 0.05em;
-  color: var(--light-grey);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: var(--space-lg);
   animation-delay: 0.4s;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 3;
 }
 
 .hero__cta {
@@ -38,6 +132,8 @@
   justify-content: center;
   flex-wrap: wrap;
   animation-delay: 0.6s;
+  position: relative;
+  z-index: 3;
 }
 
 .hero__scroll {
@@ -49,11 +145,13 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: var(--light-grey);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   animation: bounce 2s ease-in-out infinite;
+  z-index: 3;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 @keyframes bounce {
@@ -62,10 +160,21 @@
 }
 
 .hero__scroll svg {
-  opacity: 0.6;
+  opacity: 0.7;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.8));
 }
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
+  .hero {
+    background-position: center 30%;
+  }
+
+  .hero .hero__side-fade-left,
+  .hero .hero__side-fade-right {
+    width: 15%;
+  }
+
   .hero__cta {
     flex-direction: column;
     align-items: center;
@@ -74,5 +183,27 @@
   .hero__cta .btn {
     width: 100%;
     max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    background-position: 40% 30%;
+  }
+
+  .hero__bottom-fade {
+    height: 150px;
+  }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero::after {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .hero__scroll {
+    animation: none;
   }
 }

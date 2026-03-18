@@ -3,6 +3,13 @@ import '../styles/Hero.css'
 export default function Hero() {
   return (
     <section className="hero grain">
+      {/* Side Fades (for portrait image in wide container) */}
+      <div className="hero__side-fade-left" aria-hidden="true"></div>
+      <div className="hero__side-fade-right" aria-hidden="true"></div>
+      
+      {/* Bottom Gradient Fade */}
+      <div className="hero__bottom-fade" aria-hidden="true"></div>
+      
       <div className="hero__content container">
         <div className="hero__text fade-in">
           <h1 className="hero__title">
