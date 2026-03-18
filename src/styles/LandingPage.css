@@ -1,0 +1,192 @@
+/* Landing Page - Premium Entrance */
+
+.landing-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.landing-page.visible {
+  opacity: 1;
+}
+
+.landing-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.landing-background::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.85)
+  );
+}
+
+.landing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.landing-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 var(--space-md);
+}
+
+.landing-logo {
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 200;
+  letter-spacing: 0.3em;
+  margin-bottom: var(--space-sm);
+  color: var(--white);
+  text-transform: uppercase;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.landing-tagline {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  color: var(--off-white);
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.landing-enter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.2rem 3rem;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.landing-enter-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.landing-enter-btn:hover::before {
+  left: 0;
+}
+
+.landing-enter-btn:hover {
+  color: var(--black);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+}
+
+.landing-enter-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.landing-enter-btn:hover svg {
+  transform: translateX(5px);
+}
+
+.landing-enter-btn:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .landing-logo {
+    font-size: clamp(2rem, 12vw, 5rem);
+    letter-spacing: 0.2em;
+  }
+  
+  .landing-tagline {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+    letter-spacing: 0.15em;
+    margin-bottom: var(--space-md);
+  }
+  
+  .landing-enter-btn {
+    padding: 1rem 2.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .landing-page {
+    transition: opacity 0.3s ease;
+  }
+  
+  .landing-logo,
+  .landing-tagline,
+  .landing-enter-btn {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .landing-enter-btn:hover {
+    transform: none;
+  }
+}

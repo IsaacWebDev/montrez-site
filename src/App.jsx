@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import LandingPage from './components/LandingPage'
 import VideoIntro from './components/VideoIntro'
 import LoadingSpinner from './components/LoadingSpinner'
 import Navbar from './components/Navbar'
@@ -12,35 +13,41 @@ import Admin from './components/Admin'
 import './styles/theme.css'
 
 function HomePage() {
-  const [showIntro, setShowIntro] = useState(() => {
-    // Only show intro if on homepage and not seen before
-    const hasSeenIntro = sessionStorage.getItem('montrez-intro-seen')
-    return !hasSeenIntro
-  })
-  const [introComplete, setIntroComplete] = useState(() => {
-    // If already seen, mark as complete immediately
-    return !!sessionStorage.getItem('montrez-intro-seen')
+  // Three-stage flow: landing → video → site
+  const [stage, setStage] = useState(() => {
+    // Check if user has completed the full entrance sequence
+    const hasCompletedEntrance = sessionStorage.getItem('montrez-entrance-complete')
+    return hasCompletedEntrance ? 'site' : 'landing'
   })
 
-  const handleIntroComplete = () => {
-    sessionStorage.setItem('montrez-intro-seen', 'true')
-    setShowIntro(false)
-    setTimeout(() => {
-      setIntroComplete(true)
-      // Remove loading screen
-      const loading = document.getElementById('loading')
-      if (loading) {
-        loading.style.opacity = '0'
-        setTimeout(() => loading.remove(), 300)
-      }
-    }, 300)
+  const handleEnterClick = () => {
+    setStage('video')
+  }
+
+  const handleVideoComplete = () => {
+    // Mark entrance as complete
+    sessionStorage.setItem('montrez-entrance-complete', 'true')
+    setStage('site')
+    
+    // Remove loading screen if present
+    const loading = document.getElementById('loading')
+    if (loading) {
+      loading.style.opacity = '0'
+      setTimeout(() => loading.remove(), 300)
+    }
   }
 
   return (
     <>
-      {showIntro && <VideoIntro onComplete={handleIntroComplete} />}
+      {stage === 'landing' && (
+        <LandingPage onEnter={handleEnterClick} />
+      )}
       
-      {introComplete && (
+      {stage === 'video' && (
+        <VideoIntro onComplete={handleVideoComplete} />
+      )}
+      
+      {stage === 'site' && (
         <>
           <Navbar />
           <Hero />

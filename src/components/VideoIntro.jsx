@@ -4,19 +4,15 @@ import '../styles/VideoIntro.css'
 export default function VideoIntro({ onComplete }) {
   const videoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  // Check if user has seen intro before - instant skip for returning users
-  const hasSeenBefore = sessionStorage.getItem('montrez-intro-seen')
-  const [canSkip, setCanSkip] = useState(!!hasSeenBefore)
+  const [canSkip, setCanSkip] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
 
-    // Allow skip after 2 seconds for first-time viewers
-    const skipTimer = !hasSeenBefore 
-      ? setTimeout(() => setCanSkip(true), 2000) 
-      : null
+    // Allow skip after 2 seconds
+    const skipTimer = setTimeout(() => setCanSkip(true), 2000)
 
     // Video load timeout - auto-skip after 3 seconds if video doesn't load
     const loadTimeout = setTimeout(() => {
@@ -62,13 +58,13 @@ export default function VideoIntro({ onComplete }) {
     video.addEventListener('ended', handleEnded)
 
     return () => {
-      if (skipTimer) clearTimeout(skipTimer)
+      clearTimeout(skipTimer)
       clearTimeout(loadTimeout)
       video.removeEventListener('ended', handleEnded)
       video.removeEventListener('loadeddata', handleLoadedData)
       video.removeEventListener('error', handleError)
     }
-  }, [onComplete, hasSeenBefore, isLoading])
+  }, [onComplete, isLoading])
 
   const handleSkip = () => {
     if (canSkip) {
