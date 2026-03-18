@@ -1,0 +1,97 @@
+.video-intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: var(--z-overlay);
+  background: var(--black);
+  cursor: pointer;
+}
+
+.video-intro__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: contrast(1.1) brightness(0.95);
+}
+
+.video-intro__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.3) 100%);
+  pointer-events: none;
+}
+
+.video-intro__branding {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.video-intro__logo {
+  font-size: clamp(3rem, 12vw, 8rem);
+  font-weight: 200;
+  letter-spacing: 0.25em;
+  color: var(--white);
+  text-shadow: 0 0 40px rgba(0,0,0,0.5);
+  animation: logoFade 2s ease-in-out;
+}
+
+@keyframes logoFade {
+  0% { opacity: 0; transform: scale(0.95); }
+  20% { opacity: 1; transform: scale(1); }
+  80% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.05); }
+}
+
+.video-intro__skip {
+  position: absolute;
+  bottom: var(--space-md);
+  right: var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all var(--transition-medium);
+  z-index: 20;
+}
+
+.video-intro__skip:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateX(5px);
+}
+
+.video-intro__skip svg {
+  transition: transform var(--transition-fast);
+}
+
+.video-intro__skip:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .video-intro__skip {
+    bottom: var(--space-sm);
+    right: var(--space-sm);
+    padding: 0.6rem 1.2rem;
+    font-size: 0.75rem;
+  }
+}
