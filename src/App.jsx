@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { CartProvider } from './context/CartContext'
 import LandingPage from './components/LandingPage'
 import PasswordEmailModal from './components/PasswordEmailModal'
 import VideoIntro from './components/VideoIntro'
@@ -11,7 +12,9 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Admin from './components/Admin'
+import Cart from './components/Cart'
 import Shop from './pages/Shop'
+import CollectionsPage from './pages/CollectionsPage'
 import ProductDetail from './components/ProductDetail'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
@@ -61,9 +64,9 @@ function HomePage() {
         <PasswordEmailModal onSuccess={handlePasswordSuccess} />
       )}
       
-      {/* Stage 3: Video Intro */}
+      {/* Stage 3: Video Intro (Streetwear Version) */}
       {stage === 'video' && (
-        <VideoIntro onComplete={handleVideoComplete} />
+        <VideoIntroStreetwear onComplete={handleVideoComplete} />
       )}
       
       {/* Stage 4: Main Site */}
@@ -103,6 +106,7 @@ function AppRoutes() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/collections" element={<CollectionsPage />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
@@ -127,7 +131,10 @@ function AppRoutes() {
 function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
+      <CartProvider>
+        <AppRoutes />
+        <Cart />
+      </CartProvider>
     </BrowserRouter>
   )
 }

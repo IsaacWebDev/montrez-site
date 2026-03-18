@@ -1,0 +1,109 @@
+.collections-page {
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.collections-page__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.collections-page__title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.collections-page__subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Tabs */
+.collections-page__tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.collections-page__tab {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+}
+
+.collections-page__tab:hover {
+  border-color: #000;
+  background: #fafafa;
+}
+
+.collections-page__tab.active {
+  background: black;
+  color: white;
+  border-color: black;
+}
+
+/* Collection Info */
+.collections-page__info {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.collections-page__collection-title {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.collections-page__collection-desc {
+  font-size: 1rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto 0.5rem;
+}
+
+.collections-page__count {
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .collections-page {
+    padding-top: 100px;
+  }
+
+  .collections-page__header {
+    margin-bottom: 2rem;
+  }
+
+  .collections-page__tabs {
+    gap: 0.5rem;
+  }
+
+  .collections-page__tab {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .collections-page__collection-title {
+    font-size: 1.5rem;
+  }
+
+  .collections-page__info {
+    margin-bottom: 2rem;
+  }
+}

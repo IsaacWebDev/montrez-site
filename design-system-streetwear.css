@@ -1,0 +1,857 @@
+/**
+ * MONTREZ - STREETWEAR DESIGN SYSTEM
+ * Urban. Bold. Minimal.
+ * "Show Up Bold"
+ */
+
+/* ============================================
+   COLOR PALETTE - STREETWEAR
+   ============================================ */
+
+:root {
+  /* Primary Colors */
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-electric-blue: #00F0FF;
+  
+  /* Extended Palette */
+  --color-charcoal: #1A1A1A;
+  --color-steel: #808080;
+  --color-off-white: #F5F5F5;
+  --color-dark-gray: #333333;
+  
+  /* Functional Colors */
+  --color-background: var(--color-black);
+  --color-foreground: var(--color-white);
+  --color-accent: var(--color-electric-blue);
+  --color-muted: var(--color-steel);
+  --color-surface: var(--color-charcoal);
+  
+  /* Opacity Levels */
+  --opacity-overlay: 0.95;
+  --opacity-hover: 0.9;
+  --opacity-disabled: 0.5;
+  --opacity-subtle: 0.6;
+  
+  /* Glow Effects */
+  --glow-electric: 0 0 20px rgba(0, 240, 255, 0.5);
+  --glow-electric-strong: 0 0 30px rgba(0, 240, 255, 0.8);
+}
+
+/* ============================================
+   TYPOGRAPHY SYSTEM - STREETWEAR
+   ============================================ */
+
+:root {
+  /* Font Families */
+  --font-display: 'Bebas Neue', 'Roboto Condensed', 'Arial Black', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --font-accent: 'Druk Wide', 'Impact', sans-serif;
+  
+  /* Font Weights */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-bold: 700;
+  --weight-black: 900;
+  
+  /* Font Sizes - Streetwear Scale */
+  --text-micro: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;       /* 14px */
+  --text-base: 1rem;         /* 16px */
+  --text-lg: 1.125rem;       /* 18px */
+  --text-xl: 1.5rem;         /* 24px */
+  --text-2xl: 2.25rem;       /* 36px */
+  --text-3xl: 3rem;          /* 48px */
+  --text-4xl: 4.5rem;        /* 72px */
+  --text-5xl: 6rem;          /* 96px */
+  
+  /* Line Heights */
+  --leading-tight: 1.1;
+  --leading-snug: 1.3;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.8;
+  
+  /* Letter Spacing - Expanded for Streetwear */
+  --tracking-normal: 0;
+  --tracking-wide: 0.05em;
+  --tracking-wider: 0.1em;
+  --tracking-widest: 0.15em;
+  --tracking-mega: 0.2em;
+}
+
+/* Typography Classes - Streetwear */
+.heading-hero {
+  font-family: var(--font-display);
+  font-size: var(--text-5xl);
+  font-weight: var(--weight-black);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-mega);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.heading-1 {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.heading-2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.heading-3 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.heading-4 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.body-large {
+  font-family: var(--font-body);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-white);
+}
+
+.body-base {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-white);
+}
+
+.body-small {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-regular);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--color-steel);
+}
+
+.label-large {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.label-small {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+.accent-text {
+  font-family: var(--font-display);
+  color: var(--color-electric-blue);
+  text-shadow: var(--glow-electric);
+}
+
+/* ============================================
+   SPACING SYSTEM - 8PX GRID
+   ============================================ */
+
+:root {
+  --space-1: 0.25rem;    /* 4px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-3: 1rem;       /* 16px */
+  --space-4: 1.5rem;     /* 24px */
+  --space-5: 2rem;       /* 32px */
+  --space-6: 3rem;       /* 48px */
+  --space-8: 4rem;       /* 64px */
+  --space-12: 6rem;      /* 96px */
+  --space-16: 8rem;      /* 128px */
+  
+  /* Section Spacing */
+  --section-padding-mobile: var(--space-6);
+  --section-padding-desktop: var(--space-12);
+  --section-gap: var(--space-8);
+}
+
+/* ============================================
+   BUTTON SYSTEM - STREETWEAR
+   ============================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  
+  font-family: var(--font-body);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  text-decoration: none;
+  
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+  
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-electric-blue);
+  outline-offset: 2px;
+}
+
+/* Primary Button - Electric Blue */
+.btn-primary {
+  background: var(--color-electric-blue);
+  color: var(--color-black);
+  padding: 1rem 3rem;
+  font-size: var(--text-sm);
+  min-width: 200px;
+  box-shadow: var(--glow-electric);
+}
+
+.btn-primary:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+  transform: scale(1.02);
+  box-shadow: var(--glow-electric-strong);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* Secondary Button - White Outline */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-white);
+  padding: 1rem 3rem;
+  font-size: var(--text-sm);
+  border: 2px solid var(--color-white);
+  min-width: 200px;
+}
+
+.btn-secondary:hover {
+  background: var(--color-white);
+  color: var(--color-black);
+  transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+}
+
+/* Minimal Button - Text Only */
+.btn-minimal {
+  background: transparent;
+  color: var(--color-electric-blue);
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  position: relative;
+}
+
+.btn-minimal::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-electric-blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.btn-minimal:hover::after {
+  transform: scaleX(1);
+}
+
+/* Large Button */
+.btn-lg {
+  padding: 1.25rem 4rem;
+  font-size: var(--text-base);
+  min-width: 240px;
+}
+
+/* Small Button */
+.btn-sm {
+  padding: 0.75rem 2rem;
+  font-size: var(--text-micro);
+  min-width: 140px;
+}
+
+/* Icon Button */
+.btn-icon {
+  padding: var(--space-3);
+  min-width: auto;
+  aspect-ratio: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-icon:hover {
+  border-color: var(--color-electric-blue);
+  color: var(--color-electric-blue);
+}
+
+/* ============================================
+   CARD SYSTEM - STREETWEAR
+   ============================================ */
+
+.card {
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.card:hover {
+  border-color: var(--color-electric-blue);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Product Card - Streetwear */
+.card-product {
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.card-product-image {
+  position: relative;
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  background: var(--color-charcoal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.card-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0, 0, 0.2, 1);
+  filter: grayscale(50%) contrast(1.1);
+}
+
+.card-product:hover .card-product-image {
+  border-color: var(--color-electric-blue);
+}
+
+.card-product:hover .card-product-image img {
+  transform: scale(1.05);
+  filter: grayscale(0%) contrast(1.05);
+}
+
+.card-product-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.card-product:hover .card-product-overlay {
+  opacity: 1;
+}
+
+.card-product-info {
+  padding: var(--space-3) 0;
+  text-align: center;
+}
+
+.card-product-name {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: var(--space-2);
+}
+
+.card-product-price {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  color: var(--color-steel);
+}
+
+/* Info Card with Blue Accent */
+.card-info {
+  background: var(--color-black);
+  border-left: 4px solid var(--color-electric-blue);
+  padding: var(--space-4);
+}
+
+.card-info:hover {
+  background: var(--color-charcoal);
+  box-shadow: 0 4px 16px rgba(0, 240, 255, 0.2);
+}
+
+/* Sold Out Badge - Streetwear Style */
+.badge-sold-out {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-electric-blue);
+  color: var(--color-black);
+  font-size: var(--text-micro);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  z-index: 10;
+  box-shadow: var(--glow-electric);
+}
+
+/* New Drop Badge */
+.badge-new {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: var(--color-white);
+  color: var(--color-black);
+  font-size: var(--text-micro);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+/* ============================================
+   INPUT SYSTEM - STREETWEAR
+   ============================================ */
+
+.input {
+  width: 100%;
+  padding: var(--space-3);
+  
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  letter-spacing: var(--tracking-normal);
+  
+  background: transparent;
+  color: var(--color-white);
+  border: 2px solid var(--color-steel);
+  
+  transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.input::placeholder {
+  color: var(--color-muted);
+  opacity: var(--opacity-subtle);
+}
+
+.input:hover {
+  border-color: var(--color-white);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-electric-blue);
+  box-shadow: 0 0 0 1px var(--color-electric-blue);
+}
+
+.input:disabled {
+  opacity: var(--opacity-disabled);
+  cursor: not-allowed;
+}
+
+/* Input Minimal - Underline Only */
+.input-minimal {
+  border: none;
+  border-bottom: 2px solid var(--color-steel);
+  border-radius: 0;
+  padding: var(--space-3) 0;
+}
+
+.input-minimal:focus {
+  border-color: var(--color-electric-blue);
+  box-shadow: none;
+}
+
+/* ============================================
+   NAVIGATION - STREETWEAR
+   ============================================ */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, var(--opacity-overlay));
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--weight-black);
+  letter-spacing: var(--tracking-mega);
+  color: var(--color-white);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+  color: var(--color-electric-blue);
+  text-shadow: var(--glow-electric);
+}
+
+/* Hamburger Menu - Minimal */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 32px;
+  height: 24px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background: var(--color-white);
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.hamburger:hover .hamburger-line {
+  background: var(--color-electric-blue);
+}
+
+.hamburger.open .hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu - Streetwear */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.98);
+  backdrop-filter: blur(16px);
+  z-index: 999;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-link {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
+  transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.menu-link:hover {
+  color: var(--color-electric-blue);
+  text-shadow: var(--glow-electric);
+  transform: translateX(8px);
+}
+
+/* ============================================
+   ANIMATION SYSTEM - STREETWEAR
+   ============================================ */
+
+:root {
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 240, 255, 0.8);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn var(--duration-base) var(--ease-out);
+}
+
+.animate-slide-up {
+  animation: slideUp var(--duration-slow) var(--ease-out);
+}
+
+.animate-slide-right {
+  animation: slideRight var(--duration-slow) var(--ease-out);
+}
+
+.animate-glow {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* ============================================
+   EFFECTS - STREETWEAR
+   ============================================ */
+
+/* Subtle Grain Texture */
+.effect-grain {
+  position: relative;
+}
+
+.effect-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" /></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+  pointer-events: none;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+}
+
+/* Neon Glow Text */
+.effect-neon {
+  color: var(--color-electric-blue);
+  text-shadow: 
+    0 0 10px rgba(0, 240, 255, 0.8),
+    0 0 20px rgba(0, 240, 255, 0.6),
+    0 0 30px rgba(0, 240, 255, 0.4);
+}
+
+/* Urban Scan Lines */
+.effect-scanlines {
+  position: relative;
+}
+
+.effect-scanlines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 240, 255, 0.03) 2px,
+    rgba(0, 240, 255, 0.03) 4px
+  );
+  pointer-events: none;
+}
+
+/* ============================================
+   LAYOUT SYSTEM
+   ============================================ */
+
+:root {
+  --container-max: 1440px;
+  --container-padding: var(--space-5);
+  --grid-gap: var(--space-4);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.grid-products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--grid-gap);
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.text-electric {
+  color: var(--color-electric-blue);
+}
+
+.bg-black {
+  background-color: var(--color-black);
+}
+
+.bg-charcoal {
+  background-color: var(--color-charcoal);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: var(--weight-bold);
+}
+
+.center {
+  text-align: center;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 767px) {
+  .heading-hero {
+    font-size: var(--text-4xl);
+  }
+  
+  .heading-1 {
+    font-size: var(--text-3xl);
+  }
+  
+  .heading-2 {
+    font-size: var(--text-2xl);
+  }
+  
+  .btn-primary, .btn-secondary {
+    min-width: 160px;
+    padding: 0.875rem 2rem;
+  }
+  
+  .grid-products {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-3);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-electric-blue);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

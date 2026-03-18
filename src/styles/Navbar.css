@@ -45,6 +45,9 @@
   display: none;
   gap: 2rem;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .navbar__link {
@@ -78,6 +81,49 @@
 
 .navbar__link:hover::after {
   width: 100%;
+}
+
+/* Icons */
+.navbar__icons {
+  display: none;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.navbar__icon {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s;
+}
+
+.navbar__icon:hover {
+  color: #fff;
+}
+
+.navbar__cart-icon {
+  position: relative;
+}
+
+.navbar__cart-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #fff;
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Hamburger Toggle */
@@ -115,6 +161,10 @@
 /* Desktop View */
 @media (min-width: 769px) {
   .navbar__links {
+    display: flex;
+  }
+
+  .navbar__icons {
     display: flex;
   }
 

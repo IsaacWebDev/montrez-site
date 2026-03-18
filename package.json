@@ -6,13 +6,16 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "optimize-video": "node scripts/optimize-video.js"
+    "optimize-video": "node scripts/optimize-video.js",
+    "test:api": "node test-backend.js",
+    "test:api:prod": "node test-backend.js https://montrez-site.vercel.app"
   },
   "dependencies": {
     "framer-motion": "^12.38.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.0"
+    "react-router-dom": "^6.22.0",
+    "resend": "^3.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.2.1",

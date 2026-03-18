@@ -1,0 +1,347 @@
+/* Navbar - Streetwear Style */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.navbar--scrolled {
+  background: rgba(0, 0, 0, 0.98);
+  border-bottom-color: rgba(0, 240, 255, 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.navbar__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Logo - Text Based */
+.navbar__logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  color: var(--color-white);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.navbar__logo:hover {
+  color: var(--color-electric-blue);
+  text-shadow: 
+    0 0 20px rgba(0, 240, 255, 0.6),
+    0 0 30px rgba(0, 240, 255, 0.4);
+  transform: scale(1.02);
+}
+
+.navbar__logo:active {
+  transform: scale(0.98);
+}
+
+/* Navigation Actions */
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Icon Buttons */
+.navbar__icon-btn {
+  position: relative;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--color-white);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0, 0, 0.2, 1);
+  border-radius: 0;
+}
+
+.navbar__icon-btn:hover {
+  border-color: var(--color-electric-blue);
+  color: var(--color-electric-blue);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.navbar__icon-btn:active {
+  transform: translateY(0);
+}
+
+.navbar__icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Cart Badge */
+.navbar__cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--color-electric-blue);
+  color: var(--color-black);
+  font-size: 0.65rem;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+  animation: badgePulse 2s ease-in-out infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.9);
+  }
+}
+
+/* Hamburger Menu Button */
+.navbar__hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 32px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.navbar__hamburger-line {
+  width: 100%;
+  height: 2px;
+  background: var(--color-white);
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+  transform-origin: center;
+}
+
+.navbar__hamburger:hover .navbar__hamburger-line {
+  background: var(--color-electric-blue);
+}
+
+.navbar__hamburger.open .navbar__hamburger-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar__hamburger.open .navbar__hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__hamburger.open .navbar__hamburger-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Desktop Navigation Links (if needed) */
+.navbar__links {
+  display: none; /* Hide on mobile by default */
+  gap: 2rem;
+  align-items: center;
+}
+
+.navbar__link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-electric-blue);
+  transition: width 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.navbar__link:hover {
+  color: var(--color-electric-blue);
+}
+
+.navbar__link:hover::after {
+  width: 100%;
+}
+
+.navbar__link--active {
+  color: var(--color-electric-blue);
+}
+
+.navbar__link--active::after {
+  width: 100%;
+}
+
+/* Show desktop links on larger screens */
+@media (min-width: 1024px) {
+  .navbar__links {
+    display: flex;
+  }
+  
+  .navbar__hamburger {
+    display: none;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .navbar__container {
+    padding: 0.875rem 1.5rem;
+  }
+  
+  .navbar__logo {
+    font-size: 1.5rem;
+    letter-spacing: 0.2em;
+  }
+  
+  .navbar__actions {
+    gap: 1rem;
+  }
+  
+  .navbar__icon-btn {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .navbar__icon-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar__container {
+    padding: 0.75rem 1rem;
+  }
+  
+  .navbar__logo {
+    font-size: 1.25rem;
+    letter-spacing: 0.15em;
+  }
+  
+  .navbar__actions {
+    gap: 0.75rem;
+  }
+}
+
+/* Search Bar Integration (if using SearchBar component) */
+.navbar__search {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.98);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 240, 255, 0.2);
+  padding: 1.5rem 2rem;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.navbar__search--open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Accessibility */
+.navbar__icon-btn:focus-visible {
+  outline: 2px solid var(--color-electric-blue);
+  outline-offset: 2px;
+}
+
+.navbar__logo:focus-visible {
+  outline: 2px solid var(--color-electric-blue);
+  outline-offset: 4px;
+}
+
+/* Loading State */
+.navbar--loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+/* Sticky Behavior */
+.navbar--sticky {
+  position: sticky;
+  top: 0;
+}
+
+/* Announcement Bar (optional - for drops/sales) */
+.navbar__announcement {
+  background: var(--color-electric-blue);
+  color: var(--color-black);
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar__announcement::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}

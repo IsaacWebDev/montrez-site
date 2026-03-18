@@ -1,0 +1,331 @@
+/* Urban Streetwear Entrance Screen */
+
+.video-intro-streetwear {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: #000000;
+  overflow: hidden;
+  cursor: pointer;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.video-intro-streetwear.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Urban Background - Concrete Texture */
+.urban-background {
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%),
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.02) 2px, rgba(255,255,255,0.02) 4px),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.02) 2px, rgba(255,255,255,0.02) 4px);
+  background-size: 100%, 40px 40px, 40px 40px;
+}
+
+.concrete-texture {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255,255,255,0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.02) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(0,0,0,0.3) 0%, transparent 50%);
+  opacity: 0.6;
+}
+
+/* Scanlines Effect */
+.scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 240, 255, 0.02) 2px,
+    rgba(0, 240, 255, 0.02) 4px
+  );
+  pointer-events: none;
+  animation: scanlineMove 8s linear infinite;
+}
+
+@keyframes scanlineMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(40px);
+  }
+}
+
+/* Neon Container */
+.neon-container {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.neon-flicker {
+  animation: flicker 0.15s ease-in 0.5s;
+}
+
+/* Neon Logo */
+.neon-logo {
+  font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  color: #00F0FF;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  text-shadow: 
+    0 0 10px rgba(0, 240, 255, 1),
+    0 0 20px rgba(0, 240, 255, 0.8),
+    0 0 30px rgba(0, 240, 255, 0.6),
+    0 0 40px rgba(0, 240, 255, 0.4),
+    0 0 50px rgba(0, 240, 255, 0.2);
+  animation: neonGlow 2s ease-in-out infinite;
+  display: flex;
+  gap: 0.1em;
+}
+
+.neon-letter {
+  display: inline-block;
+  animation: letterFlicker 3s ease-in-out infinite;
+}
+
+.neon-letter:nth-child(1) { animation-delay: 0s; }
+.neon-letter:nth-child(2) { animation-delay: 0.1s; }
+.neon-letter:nth-child(3) { animation-delay: 0.2s; }
+.neon-letter:nth-child(4) { animation-delay: 0.3s; }
+.neon-letter:nth-child(5) { animation-delay: 0.4s; }
+.neon-letter:nth-child(6) { animation-delay: 0.5s; }
+.neon-letter:nth-child(7) { animation-delay: 0.6s; }
+
+/* Neon Tagline */
+.neon-tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.875rem, 2vw, 1.25rem);
+  font-weight: 700;
+  letter-spacing: 0.5em;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeInSlide 0.8s ease-out 1.5s forwards;
+  text-shadow: 
+    0 0 5px rgba(255, 255, 255, 0.5),
+    0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+/* Electric Glow Effect */
+.electric-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 60%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 240, 255, 0.15) 0%,
+    rgba(0, 240, 255, 0.05) 30%,
+    transparent 70%
+  );
+  filter: blur(60px);
+  animation: glowPulse 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+/* Grain Overlay */
+.grain-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.05"/></svg>');
+  pointer-events: none;
+  opacity: 0.4;
+  mix-blend-mode: overlay;
+  z-index: 20;
+}
+
+/* Skip Button */
+.skip-btn {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 30;
+  
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  padding: 0.75rem 2rem;
+  
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #FFFFFF;
+  
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
+  
+  backdrop-filter: blur(8px);
+}
+
+.skip-btn:hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: #00F0FF;
+  color: #00F0FF;
+  transform: translateY(-2px);
+  box-shadow: 
+    0 0 20px rgba(0, 240, 255, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.skip-btn:active {
+  transform: translateY(0);
+}
+
+.skip-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.skip-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    text-shadow: 
+      0 0 10px rgba(0, 240, 255, 1),
+      0 0 20px rgba(0, 240, 255, 0.8),
+      0 0 30px rgba(0, 240, 255, 0.6),
+      0 0 40px rgba(0, 240, 255, 0.4),
+      0 0 50px rgba(0, 240, 255, 0.2);
+  }
+  50% {
+    text-shadow: 
+      0 0 15px rgba(0, 240, 255, 1),
+      0 0 30px rgba(0, 240, 255, 0.9),
+      0 0 45px rgba(0, 240, 255, 0.7),
+      0 0 60px rgba(0, 240, 255, 0.5),
+      0 0 75px rgba(0, 240, 255, 0.3);
+  }
+}
+
+@keyframes letterFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes animate-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: animate-fade-in 0.5s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .neon-logo {
+    font-size: clamp(3rem, 15vw, 6rem);
+    letter-spacing: 0.2em;
+  }
+  
+  .neon-tagline {
+    font-size: clamp(0.75rem, 3vw, 1rem);
+    letter-spacing: 0.3em;
+    margin-top: 1.5rem;
+  }
+  
+  .skip-btn {
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.625rem 1.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .neon-logo,
+  .electric-glow,
+  .scanlines,
+  .neon-letter {
+    animation: none !important;
+  }
+  
+  .neon-tagline {
+    opacity: 1;
+    animation: none !important;
+  }
+}
