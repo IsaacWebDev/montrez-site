@@ -11,14 +11,14 @@ export default function VideoIntro({ onComplete }) {
     const video = videoRef.current
     if (!video) return
 
-    // NO SKIP BUTTON - removed per user request
-    // Video load timeout - auto-skip after 30 seconds if video doesn't load
+    // NO SKIP BUTTON - video is now 0.78MB (loads fast)
+    // Shorter timeout since video is tiny now (10 seconds max)
     const loadTimeout = setTimeout(() => {
       if (isLoading) {
-        console.warn('Video load timeout after 30s')
+        console.warn('Video load timeout after 10s')
         onComplete()
       }
-    }, 30000)
+    }, 10000)
 
     const playVideo = async () => {
       try {
