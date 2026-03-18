@@ -4,15 +4,27 @@ import '../styles/VideoIntro.css'
 export default function VideoIntro({ onComplete }) {
   const videoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
-  const [canSkip, setCanSkip] = useState(false)
+  // Check if user has seen intro before - instant skip for returning users
+  const hasSeenBefore = sessionStorage.getItem('montrez-intro-seen')
+  const [canSkip, setCanSkip] = useState(!!hasSeenBefore)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
 
-    // Allow skip after 2 seconds
-    const skipTimer = setTimeout(() => setCanSkip(true), 2000)
+    // Allow skip after 2 seconds for first-time viewers
+    const skipTimer = !hasSeenBefore 
+      ? setTimeout(() => setCanSkip(true), 2000) 
+      : null
+
+    // Video load timeout - auto-skip after 3 seconds if video doesn't load
+    const loadTimeout = setTimeout(() => {
+      if (isLoading) {
+        console.warn('Video load timeout, skipping intro')
+        onComplete()
+      }
+    }, 3000)
 
     const playVideo = async () => {
       try {
@@ -29,9 +41,16 @@ export default function VideoIntro({ onComplete }) {
 
     const handleLoadedData = () => {
       setIsLoading(false)
+      clearTimeout(loadTimeout)
+    }
+
+    const handleError = () => {
+      console.error('Video failed to load, skipping intro')
+      onComplete()
     }
 
     video.addEventListener('loadeddata', handleLoadedData)
+    video.addEventListener('error', handleError)
 
     // Small delay to ensure DOM is ready
     setTimeout(playVideo, 100)
@@ -43,11 +62,13 @@ export default function VideoIntro({ onComplete }) {
     video.addEventListener('ended', handleEnded)
 
     return () => {
-      clearTimeout(skipTimer)
+      if (skipTimer) clearTimeout(skipTimer)
+      clearTimeout(loadTimeout)
       video.removeEventListener('ended', handleEnded)
       video.removeEventListener('loadeddata', handleLoadedData)
+      video.removeEventListener('error', handleError)
     }
-  }, [onComplete])
+  }, [onComplete, hasSeenBefore, isLoading])
 
   const handleSkip = () => {
     if (canSkip) {

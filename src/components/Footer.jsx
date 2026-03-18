@@ -14,8 +14,6 @@ export default function Footer() {
             <div className="footer__column">
               <h4>Shop</h4>
               <a href="#collections">Collections</a>
-              <a href="#new">New Arrivals</a>
-              <a href="#exclusive">Exclusive</a>
             </div>
             <div className="footer__column">
               <h4>Company</h4>
