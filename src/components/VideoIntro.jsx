@@ -14,13 +14,13 @@ export default function VideoIntro({ onComplete }) {
     // Allow skip after 2 seconds
     const skipTimer = setTimeout(() => setCanSkip(true), 2000)
 
-    // Video load timeout - auto-skip after 3 seconds if video doesn't load
+    // Video load timeout - auto-skip after 10 seconds if video doesn't load (20MB file needs time)
     const loadTimeout = setTimeout(() => {
       if (isLoading) {
         console.warn('Video load timeout, skipping intro')
         onComplete()
       }
-    }, 3000)
+    }, 10000)
 
     const playVideo = async () => {
       try {
@@ -36,20 +36,32 @@ export default function VideoIntro({ onComplete }) {
     }
 
     const handleLoadedData = () => {
+      console.log('Video loaded successfully')
+      setIsLoading(false)
+      clearTimeout(loadTimeout)
+      // Try to play once loaded
+      playVideo()
+    }
+
+    const handleCanPlay = () => {
+      console.log('Video can play')
       setIsLoading(false)
       clearTimeout(loadTimeout)
     }
 
-    const handleError = () => {
-      console.error('Video failed to load, skipping intro')
+    const handleError = (e) => {
+      console.error('Video failed to load:', e)
+      console.error('Video src:', video.src)
+      console.error('Video error code:', video.error?.code)
       onComplete()
     }
 
     video.addEventListener('loadeddata', handleLoadedData)
+    video.addEventListener('canplay', handleCanPlay)
     video.addEventListener('error', handleError)
 
-    // Small delay to ensure DOM is ready
-    setTimeout(playVideo, 100)
+    // Try to load video
+    video.load()
 
     const handleEnded = () => {
       setTimeout(onComplete, 500)
@@ -62,6 +74,7 @@ export default function VideoIntro({ onComplete }) {
       clearTimeout(loadTimeout)
       video.removeEventListener('ended', handleEnded)
       video.removeEventListener('loadeddata', handleLoadedData)
+      video.removeEventListener('canplay', handleCanPlay)
       video.removeEventListener('error', handleError)
     }
   }, [onComplete, isLoading])
