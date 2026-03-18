@@ -1,7 +1,7 @@
 /* Collections Section - Horizontal Grid Layout */
 
 .collections {
-  background: var(--near-black);
+  background: var(--white);
 }
 
 .collections__header {
@@ -10,7 +10,7 @@
 
 .collections__subtitle {
   margin-top: var(--space-sm);
-  color: var(--light-grey);
+  color: var(--mid-grey);
   font-size: 1.2rem;
 }
 
@@ -26,7 +26,7 @@
 .collection-card {
   position: relative;
   overflow: hidden;
-  background: var(--dark-grey);
+  background: var(--off-white);
   transition: transform var(--transition-medium);
 }
 
@@ -72,7 +72,7 @@
 }
 
 .collection-card__description {
-  color: var(--light-grey);
+  color: var(--mid-grey);
   margin-bottom: var(--space-sm);
 }
 
@@ -81,7 +81,7 @@
   font-size: 0.9rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--chrome);
+  color: var(--black);
   transition: all var(--transition-fast);
 }
 

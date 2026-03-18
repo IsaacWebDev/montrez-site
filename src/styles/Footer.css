@@ -1,6 +1,6 @@
 .footer {
-  background: var(--black);
-  border-top: 1px solid var(--mid-grey);
+  background: var(--white);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding: var(--space-xl) 0 var(--space-md);
 }
 
@@ -23,7 +23,7 @@
 }
 
 .footer__brand p {
-  color: var(--light-grey);
+  color: var(--mid-grey);
   font-size: 0.95rem;
 }
 
@@ -38,29 +38,29 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: var(--space-sm);
-  color: var(--chrome);
+  color: var(--black);
 }
 
 .footer__column a {
   display: block;
   margin-bottom: 0.75rem;
-  color: var(--light-grey);
+  color: var(--mid-grey);
   font-size: 0.95rem;
   transition: color var(--transition-fast);
 }
 
 .footer__column a:hover {
-  color: var(--white);
+  color: var(--black);
 }
 
 .footer__bottom {
   padding-top: var(--space-md);
-  border-top: 1px solid var(--mid-grey);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .footer__bottom p {
-  color: var(--light-grey);
+  color: var(--mid-grey);
   font-size: 0.85rem;
 }
 

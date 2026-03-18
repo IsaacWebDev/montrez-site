@@ -1,5 +1,5 @@
 .contact {
-  background: var(--near-black);
+  background: var(--white);
 }
 
 .contact__content {
@@ -15,7 +15,7 @@
 
 .contact__info p {
   margin-bottom: var(--space-lg);
-  color: var(--light-grey);
+  color: var(--mid-grey);
 }
 
 .contact__details {
@@ -34,23 +34,23 @@
   font-size: 0.9rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--chrome);
+  color: var(--black);
 }
 
 .contact__detail a {
-  color: var(--white);
+  color: var(--black);
   font-size: 1.1rem;
   transition: color var(--transition-fast);
 }
 
 .contact__detail a:hover {
-  color: var(--chrome);
+  color: var(--mid-grey);
 }
 
 .contact__form {
-  background: var(--dark-grey);
+  background: var(--off-white);
   padding: var(--space-lg);
-  border: 1px solid var(--mid-grey);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
@@ -63,16 +63,16 @@
   font-size: 0.9rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--light-grey);
+  color: var(--mid-grey);
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 1rem;
-  background: var(--black);
-  border: 1px solid var(--mid-grey);
-  color: var(--white);
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: var(--black);
   font-family: var(--font-body);
   font-size: 1rem;
   transition: border-color var(--transition-fast);
@@ -81,7 +81,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--chrome);
+  border-color: var(--black);
 }
 
 .form-group textarea {
