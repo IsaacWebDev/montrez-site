@@ -3,21 +3,21 @@ import '../styles/Collections.css'
 const collections = [
   {
     id: 1,
-    title: 'Shadow Series',
-    description: 'Dark elegance meets urban edge',
-    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop&q=80'
+    title: 'Château Collection',
+    description: 'Vintage-inspired streetwear excellence',
+    image: '/images/collections/collection-1.jpg'
   },
   {
     id: 2,
-    title: 'Nocturne',
-    description: 'Evening wear reimagined',
-    image: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=800&auto=format&fit=crop&q=80'
+    title: 'Urban Essentials',
+    description: 'Bold graphics, timeless style',
+    image: '/images/collections/collection-2.jpg'
   },
   {
     id: 3,
-    title: 'Monochrome',
-    description: 'Timeless black & white',
-    image: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&auto=format&fit=crop&q=80'
+    title: 'Embellished Denim',
+    description: 'Luxury meets street culture',
+    image: '/images/collections/collection-3.jpg'
   }
 ]
 
