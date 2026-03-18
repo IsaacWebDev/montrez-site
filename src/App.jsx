@@ -65,9 +65,9 @@ function HomePage() {
         <PasswordEmailModal onSuccess={handlePasswordSuccess} />
       )}
       
-      {/* Stage 3: Video Intro (Streetwear Version) */}
+      {/* Stage 3: Video Intro (Original château video) */}
       {stage === 'video' && (
-        <VideoIntroStreetwear onComplete={handleVideoComplete} />
+        <VideoIntro onComplete={handleVideoComplete} />
       )}
       
       {/* Stage 4: Main Site */}
