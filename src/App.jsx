@@ -65,9 +65,9 @@ function HomePage() {
         <PasswordEmailModal onSuccess={handlePasswordSuccess} />
       )}
       
-      {/* Stage 3: Video Intro (Electric blue neon - CSS only) */}
+      {/* Stage 3: Video Intro (Ultra-compressed château video - 0.78MB) */}
       {stage === 'video' && (
-        <VideoIntroStreetwear onComplete={handleVideoComplete} />
+        <VideoIntro onComplete={handleVideoComplete} />
       )}
       
       {/* Stage 4: Main Site */}
