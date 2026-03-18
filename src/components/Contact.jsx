@@ -7,19 +7,72 @@ export default function Contact() {
     email: '',
     message: ''
   })
+  const [errors, setErrors] = useState({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitSuccess, setSubmitSuccess] = useState(false)
 
-  const handleSubmit = (e) => {
+  const validateForm = () => {
+    const newErrors = {}
+    
+    if (!formData.name.trim()) {
+      newErrors.name = 'Name is required'
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = 'Name must be at least 2 characters'
+    }
+    
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email is required'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address'
+    }
+    
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required'
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 10 characters'
+    }
+    
+    return newErrors
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message. We will be in touch soon.')
-    setFormData({ name: '', email: '', message: '' })
+    
+    const validationErrors = validateForm()
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      return
+    }
+    
+    setIsSubmitting(true)
+    setErrors({})
+    
+    // Simulate API call
+    setTimeout(() => {
+      console.log('Form submitted:', formData)
+      setSubmitSuccess(true)
+      setFormData({ name: '', email: '', message: '' })
+      setIsSubmitting(false)
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => setSubmitSuccess(false), 5000)
+    }, 1000)
   }
 
   const handleChange = (e) => {
+    const { name, value } = e.target
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     })
+    
+    // Clear error for this field when user starts typing
+    if (errors[name]) {
+      setErrors({
+        ...errors,
+        [name]: ''
+      })
+    }
   }
 
   return (
@@ -47,6 +100,12 @@ export default function Contact() {
           </div>
 
           <form className="contact__form fade-in" onSubmit={handleSubmit}>
+            {submitSuccess && (
+              <div className="form-success">
+                ✓ Thank you for your message. We will be in touch soon.
+              </div>
+            )}
+            
             <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
@@ -55,9 +114,12 @@ export default function Contact() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                required
+                className={errors.name ? 'error' : ''}
+                disabled={isSubmitting}
               />
+              {errors.name && <span className="form-error">{errors.name}</span>}
             </div>
+            
             <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
@@ -66,9 +128,12 @@ export default function Contact() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                required
+                className={errors.email ? 'error' : ''}
+                disabled={isSubmitting}
               />
+              {errors.email && <span className="form-error">{errors.email}</span>}
             </div>
+            
             <div className="form-group">
               <label htmlFor="message">Message</label>
               <textarea
@@ -77,11 +142,14 @@ export default function Contact() {
                 rows="5"
                 value={formData.message}
                 onChange={handleChange}
-                required
+                className={errors.message ? 'error' : ''}
+                disabled={isSubmitting}
               />
+              {errors.message && <span className="form-error">{errors.message}</span>}
             </div>
-            <button type="submit" className="btn btn-gold">
-              Send Message
+            
+            <button type="submit" className="btn btn-gold" disabled={isSubmitting}>
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
