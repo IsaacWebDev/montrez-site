@@ -19,14 +19,14 @@ export default function LandingPage({ onEnter }) {
 
   return (
     <div className={`landing-page ${isVisible ? 'visible' : ''}`}>
-      {/* Gate Image - Château de Chambord style */}
+      {/* Gate Image - Real Château de Chambord gates */}
       <div 
         className="landing-background gate-image" 
         style={{ 
-          backgroundImage: 'url(https://images.unsplash.com/photo-1535537287769-e5b0709acb6d?q=80&w=2070&auto=format&fit=crop)',
+          backgroundImage: 'url(/images/landing-gate.jpg)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          filter: 'grayscale(100%) contrast(1.1)'
+          filter: 'grayscale(100%) contrast(1.2) brightness(0.9)'
         }}
       />
       <div className="landing-overlay grain" />
