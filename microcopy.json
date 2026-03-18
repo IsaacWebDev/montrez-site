@@ -1,0 +1,245 @@
+{
+  "buttons": {
+    "primary": {
+      "enter": "Enter the Archive",
+      "shop": "Browse Collection",
+      "explore": "Explore",
+      "viewDetails": "View Details",
+      "addToCart": "Add to Cart",
+      "checkout": "Proceed to Checkout",
+      "continueShopping": "Continue Shopping",
+      "backToShop": "Back to Shop",
+      "submit": "Submit",
+      "send": "Send Message",
+      "subscribe": "Subscribe",
+      "login": "Sign In",
+      "logout": "Sign Out",
+      "register": "Create Account"
+    },
+    "secondary": {
+      "learnMore": "Learn More",
+      "ourStory": "Our Story",
+      "viewAll": "View All",
+      "filter": "Filter",
+      "sort": "Sort",
+      "search": "Search",
+      "close": "Close",
+      "cancel": "Cancel",
+      "skip": "Skip"
+    },
+    "states": {
+      "loading": "Loading...",
+      "sending": "Sending...",
+      "processing": "Processing...",
+      "success": "Success ✓",
+      "sent": "Sent ✓",
+      "added": "Added ✓",
+      "error": "Try Again"
+    }
+  },
+  "navigation": {
+    "menu": "Menu",
+    "home": "Home",
+    "shop": "Shop",
+    "about": "About",
+    "contact": "Contact",
+    "search": "Search",
+    "account": "Account",
+    "cart": "Cart",
+    "cartEmpty": "Cart (0)",
+    "cartCount": "Cart ({count})"
+  },
+  "products": {
+    "status": {
+      "inStock": "In Stock",
+      "soldOut": "Sold Out",
+      "archiveClosed": "Archive Closed",
+      "limited": "Limited Stock",
+      "comingSoon": "Coming Soon"
+    },
+    "actions": {
+      "selectSize": "Select Size",
+      "sizeGuide": "Size Guide",
+      "addedToCart": "Added to Cart",
+      "outOfStock": "Out of Stock",
+      "notifyMe": "Notify When Available"
+    },
+    "details": {
+      "price": "Price",
+      "size": "Size",
+      "color": "Color",
+      "quantity": "Quantity",
+      "sku": "SKU",
+      "category": "Category",
+      "tags": "Tags"
+    }
+  },
+  "forms": {
+    "placeholders": {
+      "email": "your@email.com",
+      "name": "Your name",
+      "password": "Enter password",
+      "search": "Search the archive...",
+      "message": "Tell us what you need...",
+      "subject": "What's this about?"
+    },
+    "labels": {
+      "email": "Email",
+      "name": "Name",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "phone": "Phone",
+      "address": "Address",
+      "city": "City",
+      "zipCode": "ZIP Code",
+      "country": "Country",
+      "message": "Message",
+      "subject": "Subject"
+    },
+    "validation": {
+      "required": "This field is required",
+      "invalidEmail": "Please enter a valid email address",
+      "passwordTooShort": "Password must be at least 8 characters",
+      "passwordMismatch": "Passwords do not match",
+      "invalidPhone": "Please enter a valid phone number",
+      "invalidZip": "Please enter a valid ZIP code",
+      "tooLong": "This field is too long",
+      "onlyNumbers": "Please enter only numbers"
+    }
+  },
+  "cart": {
+    "empty": "Your archive is empty",
+    "emptyDescription": "Browse our limited collection and add pieces to your cart.",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingCalculated": "Calculated at checkout",
+    "tax": "Tax",
+    "total": "Total",
+    "remove": "Remove",
+    "update": "Update",
+    "clear": "Clear Cart"
+  },
+  "checkout": {
+    "steps": {
+      "information": "Information",
+      "shipping": "Shipping",
+      "payment": "Payment"
+    },
+    "shippingInfo": "Shipping Information",
+    "paymentInfo": "Payment Information",
+    "reviewOrder": "Review Order",
+    "placeOrder": "Place Order",
+    "orderSummary": "Order Summary"
+  },
+  "messages": {
+    "success": {
+      "addedToCart": "Added to cart successfully",
+      "messageSent": "Message sent. We'll respond within 24-48 hours.",
+      "subscribed": "You're on the list",
+      "orderPlaced": "Order placed successfully",
+      "accountCreated": "Account created successfully",
+      "passwordReset": "Password reset email sent"
+    },
+    "error": {
+      "generic": "Something went wrong. Please try again.",
+      "networkError": "Network error. Check your connection.",
+      "serverError": "Server error. Try again later.",
+      "notFound": "Page not found",
+      "outOfStock": "This item is out of stock",
+      "invalidCredentials": "Invalid email or password",
+      "sessionExpired": "Session expired. Please sign in again."
+    },
+    "info": {
+      "loading": "Loading the archive...",
+      "processing": "Processing your request...",
+      "updating": "Updating...",
+      "saving": "Saving..."
+    }
+  },
+  "authentication": {
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "forgotPassword": "Forgot Password?",
+    "resetPassword": "Reset Password",
+    "createAccount": "Create Account",
+    "haveAccount": "Already have an account?",
+    "noAccount": "Don't have an account?",
+    "enterPassword": "Enter Password",
+    "newUser": "New User?",
+    "returningUser": "Returning User?",
+    "getCode": "Get a Code",
+    "enterCode": "Enter Code",
+    "verifyEmail": "Verify Email"
+  },
+  "filters": {
+    "filterBy": "Filter By",
+    "sortBy": "Sort By",
+    "category": "Category",
+    "priceRange": "Price Range",
+    "size": "Size",
+    "color": "Color",
+    "availability": "Availability",
+    "clearAll": "Clear All",
+    "apply": "Apply Filters",
+    "sortOptions": {
+      "featured": "Featured",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "newest": "Newest First",
+      "nameAsc": "Name: A-Z",
+      "nameDesc": "Name: Z-A"
+    }
+  },
+  "footer": {
+    "tagline": "Pas pour Tout. Not for everyone.",
+    "copyright": "© 2026 MONTREZ. All rights reserved.",
+    "basedIn": "Based in Europe. Shipping worldwide.",
+    "sections": {
+      "shop": "Shop",
+      "info": "Information",
+      "support": "Support",
+      "follow": "Follow Us"
+    },
+    "links": {
+      "about": "About",
+      "contact": "Contact",
+      "shipping": "Shipping & Returns",
+      "sizeGuide": "Size Guide",
+      "faq": "FAQ",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "authenticity": "Authenticity Guarantee"
+    }
+  },
+  "accessibility": {
+    "skipToContent": "Skip to content",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "openCart": "Open cart",
+    "closeCart": "Close cart",
+    "openSearch": "Open search",
+    "closeSearch": "Close search",
+    "previousImage": "Previous image",
+    "nextImage": "Next image",
+    "mainNavigation": "Main navigation",
+    "productImage": "Product image"
+  },
+  "newsletter": {
+    "title": "Stay Informed",
+    "description": "Be the first to know about new drops and archive access.",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "success": "You're on the list",
+    "error": "Invalid email address"
+  },
+  "specialMessages": {
+    "exclusiveAccess": "By invitation only",
+    "limitedEdition": "Limited production. No reissues.",
+    "numberedPieces": "Each piece numbered and archived.",
+    "europeanCrafted": "Crafted in Europe",
+    "notForEveryone": "Pas pour Tout. Not for everyone.",
+    "discretionOverDisplay": "Discretion over display",
+    "archiveQuality": "Archive quality. Built to last."
+  }
+}

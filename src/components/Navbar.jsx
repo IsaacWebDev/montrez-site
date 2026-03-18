@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import HamburgerMenu from './HamburgerMenu'
 import '../styles/Navbar.css'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,38 +18,64 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close menu on route change
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location])
+
+  const handleLogoClick = () => {
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    } else {
+      navigate('/')
+    }
+  }
+
   return (
-    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
-      <div className="navbar__container container">
-        <a href="/" className="navbar__logo">
-          MONTREZ
-        </a>
+    <>
+      <motion.nav 
+        className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="navbar__container container">
+          {/* Logo */}
+          <button 
+            className="navbar__logo"
+            onClick={handleLogoClick}
+          >
+            MONTREZ
+          </button>
 
-        <button 
-          className={`navbar__toggle ${menuOpen ? 'navbar__toggle--open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+          {/* Desktop Links */}
+          <div className="navbar__links">
+            <button onClick={() => navigate('/shop')} className="navbar__link">
+              Shop
+            </button>
+            <button onClick={() => navigate('/about')} className="navbar__link">
+              About
+            </button>
+            <button onClick={() => navigate('/contact')} className="navbar__link">
+              Contact
+            </button>
+          </div>
 
-        <div className={`navbar__menu ${menuOpen ? 'navbar__menu--open' : ''}`}>
-          <a href="#collections" className="navbar__link" onClick={() => setMenuOpen(false)}>
-            Collections
-          </a>
-          <a href="#about" className="navbar__link" onClick={() => setMenuOpen(false)}>
-            About
-          </a>
-          <a href="#contact" className="navbar__link" onClick={() => setMenuOpen(false)}>
-            Contact
-          </a>
-          <a href="/admin" className="navbar__link navbar__link--admin" onClick={() => setMenuOpen(false)}>
-            Admin
-          </a>
+          {/* Hamburger Toggle */}
+          <button 
+            className={`navbar__toggle ${menuOpen ? 'navbar__toggle--open' : ''}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-      </div>
-    </nav>
+      </motion.nav>
+
+      {/* Hamburger Menu */}
+      <HamburgerMenu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+    </>
   )
 }

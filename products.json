@@ -1,0 +1,150 @@
+{
+  "products": [
+    {
+      "id": "speak-no-evil-tee",
+      "sku": "MNTRZ-SNE-001",
+      "name": "SPEAK NO EVIL Graphic T-Shirt",
+      "price": 600,
+      "currency": "USD",
+      "category": "T-Shirts",
+      "description": "Silence speaks louder than words. French-crafted cotton bearing the three wise monkeys—a reminder that discretion is the ultimate luxury. Limited European production.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/speak-no-evil-front.jpg",
+        "/products/speak-no-evil-back.jpg",
+        "/products/speak-no-evil-detail.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "tags": ["graphic", "limited", "heritage", "exclusive"]
+    },
+    {
+      "id": "army-74-shorts",
+      "sku": "MNTRZ-ARM-074",
+      "name": "ARMY 74 Shorts",
+      "price": 1000,
+      "currency": "USD",
+      "category": "Shorts",
+      "description": "Military precision meets French rebellion. Archive-inspired shorts bearing '74—the year before everything changed. Heavy-duty construction for those who refuse conformity.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/army-74-front.jpg",
+        "/products/army-74-back.jpg",
+        "/products/army-74-detail.jpg"
+      ],
+      "inStock": true,
+      "featured": false,
+      "tags": ["archive", "military", "limited", "luxury"]
+    },
+    {
+      "id": "money-tee",
+      "sku": "MNTRZ-MNY-001",
+      "name": "MONEY Graphic T-Shirt",
+      "price": 600,
+      "currency": "USD",
+      "category": "T-Shirts",
+      "description": "The currency of exclusivity. Premium European cotton with hand-finished graphics that speak the universal language. For those who understand value beyond price.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/money-front.jpg",
+        "/products/money-back.jpg",
+        "/products/money-detail.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "tags": ["graphic", "statement", "exclusive", "heritage"]
+    },
+    {
+      "id": "architect-hoodie-black",
+      "sku": "MNTRZ-ARC-BLK",
+      "name": "Architect Zip Hoodie",
+      "color": "Black",
+      "price": 1500,
+      "currency": "USD",
+      "category": "Outerwear",
+      "description": "Structured rebellion. Heavy-gauge French terry with architectural seaming and concealed hardware. Built for those who design their own reality, not follow blueprints.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "images": [
+        "/products/architect-black-front.jpg",
+        "/products/architect-black-detail.jpg",
+        "/products/architect-black-worn.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "tags": ["outerwear", "luxury", "architectural", "premium"]
+    },
+    {
+      "id": "architect-hoodie-offwhite",
+      "sku": "MNTRZ-ARC-OWH",
+      "name": "Architect Zip Hoodie",
+      "color": "Off-White",
+      "price": 1500,
+      "currency": "USD",
+      "category": "Outerwear",
+      "description": "Structured rebellion. Heavy-gauge French terry with architectural seaming and concealed hardware. Built for those who design their own reality, not follow blueprints.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "images": [
+        "/products/architect-offwhite-front.jpg",
+        "/products/architect-offwhite-detail.jpg",
+        "/products/architect-offwhite-worn.jpg"
+      ],
+      "inStock": true,
+      "featured": false,
+      "tags": ["outerwear", "luxury", "architectural", "premium"]
+    },
+    {
+      "id": "archive-jacket",
+      "sku": "MNTRZ-ARCH-001",
+      "name": "Archive Jacket",
+      "price": 1400,
+      "currency": "USD",
+      "category": "Outerwear",
+      "description": "History rewritten in thread. Vault-inspired construction with studded hardware and reinforced shoulders. Each piece numbered, each wearer part of the archive. European craftsmanship meets punk defiance.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/archive-jacket-front.jpg",
+        "/products/archive-jacket-back.jpg",
+        "/products/archive-jacket-detail.jpg"
+      ],
+      "inStock": false,
+      "featured": true,
+      "tags": ["archive", "studded", "numbered", "luxury", "sold-out"]
+    },
+    {
+      "id": "army-sweatpants",
+      "sku": "MNTRZ-ARM-SWP",
+      "name": "Army Sweatpants",
+      "price": 800,
+      "currency": "USD",
+      "category": "Bottoms",
+      "description": "Discipline without conformity. Military-grade fleece with reinforced utility details and château insignia. Comfort for those who earned it.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "images": [
+        "/products/army-sweatpants-front.jpg",
+        "/products/army-sweatpants-detail.jpg",
+        "/products/army-sweatpants-worn.jpg"
+      ],
+      "inStock": true,
+      "featured": false,
+      "tags": ["bottoms", "military", "comfort", "luxury"]
+    },
+    {
+      "id": "dazzled-logo-shorts",
+      "sku": "MNTRZ-DZL-001",
+      "name": "Dazzled Logo Shorts",
+      "price": 1000,
+      "currency": "USD",
+      "category": "Shorts",
+      "description": "Reflective defiance. Chrome-finished château emblem on premium European cotton. Built to be seen only by those who matter. Limited production run.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/dazzled-shorts-front.jpg",
+        "/products/dazzled-shorts-detail.jpg",
+        "/products/dazzled-shorts-worn.jpg"
+      ],
+      "inStock": true,
+      "featured": false,
+      "tags": ["reflective", "chrome", "limited", "statement"]
+    }
+  ]
+}

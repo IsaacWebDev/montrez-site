@@ -1,0 +1,112 @@
+{
+  "global": {
+    "siteName": "MONTREZ Official",
+    "siteUrl": "https://montrez-site.vercel.app",
+    "defaultImage": "/og-image.jpg",
+    "twitterHandle": "@montrezofficial",
+    "locale": "en_US",
+    "themeColor": "#000000"
+  },
+  "pages": {
+    "home": {
+      "title": "MONTREZ Official | European Luxury Streetwear",
+      "description": "Pas pour Tout. French château heritage meets punk defiance. Limited edition luxury streetwear from Europe. Not for everyone.",
+      "keywords": "luxury streetwear, European fashion, French streetwear, limited edition clothing, exclusive fashion, designer streetwear, MONTREZ",
+      "ogTitle": "MONTREZ Official | Not for Everyone",
+      "ogDescription": "French heritage meets deliberate rebellion. Limited luxury streetwear from Europe.",
+      "ogImage": "/og-home.jpg",
+      "canonicalUrl": "https://montrez-site.vercel.app"
+    },
+    "shop": {
+      "title": "Shop Collection | MONTREZ Official",
+      "description": "Browse limited edition pieces from MONTREZ. European luxury streetwear featuring graphic tees, hoodies, outerwear, and archive pieces. Each item numbered and exclusive.",
+      "keywords": "buy MONTREZ, luxury streetwear shop, designer clothing, limited edition fashion, European streetwear, exclusive clothing",
+      "ogTitle": "Shop the Archive | MONTREZ",
+      "ogDescription": "Limited production. No reissues. Each piece numbered.",
+      "ogImage": "/og-shop.jpg",
+      "canonicalUrl": "https://montrez-site.vercel.app/shop"
+    },
+    "about": {
+      "title": "About MONTREZ | French Heritage Meets Punk Defiance",
+      "description": "The story behind MONTREZ: Born from French château heritage and punk rebellion. Pas pour Tout — Not for everyone. Luxury streetwear for those who understand discretion over display.",
+      "keywords": "MONTREZ brand story, French fashion heritage, luxury streetwear brand, European clothing brand, Pas pour Tout",
+      "ogTitle": "About MONTREZ | Pas pour Tout",
+      "ogDescription": "French château heritage meets punk defiance. Not for everyone. By design.",
+      "ogImage": "/og-about.jpg",
+      "canonicalUrl": "https://montrez-site.vercel.app/about"
+    },
+    "contact": {
+      "title": "Contact MONTREZ | Get in Touch",
+      "description": "Contact MONTREZ for inquiries, collaborations, or archive access. Based in Europe, shipping worldwide.",
+      "keywords": "contact MONTREZ, luxury streetwear inquiry, fashion collaboration, MONTREZ support",
+      "ogTitle": "Contact | MONTREZ Official",
+      "ogDescription": "For inquiries, collaborations, or archive access.",
+      "ogImage": "/og-contact.jpg",
+      "canonicalUrl": "https://montrez-site.vercel.app/contact"
+    },
+    "product": {
+      "titleTemplate": "{productName} | MONTREZ Official",
+      "descriptionTemplate": "{productDescription} Limited European production. Available at MONTREZ Official.",
+      "keywords": "MONTREZ {productName}, luxury streetwear, limited edition, European fashion, designer clothing",
+      "ogTitleTemplate": "{productName} | MONTREZ",
+      "ogDescriptionTemplate": "{productDescription}",
+      "ogImageTemplate": "{productImage}",
+      "canonicalUrlTemplate": "https://montrez-site.vercel.app/product/{productId}",
+      "structuredData": {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        "name": "{productName}",
+        "description": "{productDescription}",
+        "brand": {
+          "@type": "Brand",
+          "name": "MONTREZ"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "{productPrice}",
+          "priceCurrency": "USD",
+          "availability": "{productAvailability}",
+          "url": "{productUrl}"
+        },
+        "image": "{productImage}"
+      }
+    }
+  },
+  "structuredData": {
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MONTREZ Official",
+      "url": "https://montrez-site.vercel.app",
+      "logo": "https://montrez-site.vercel.app/logo.png",
+      "sameAs": [
+        "https://instagram.com/montrezofficial",
+        "https://twitter.com/montrezofficial"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@montrezofficial.com",
+        "contactType": "Customer Service"
+      }
+    },
+    "website": {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "MONTREZ Official",
+      "url": "https://montrez-site.vercel.app",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://montrez-site.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  },
+  "alternateLanguages": {
+    "en": "https://montrez-site.vercel.app",
+    "fr": "https://montrez-site.vercel.app/fr"
+  },
+  "robots": {
+    "default": "index, follow",
+    "admin": "noindex, nofollow"
+  }
+}

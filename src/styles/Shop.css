@@ -1,0 +1,140 @@
+/* Shop Page Styles */
+.shop {
+  min-height: 100vh;
+  padding: 6rem 0 4rem;
+  background: #000;
+  color: #fff;
+}
+
+.shop__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.shop__title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 6px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.shop__subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  letter-spacing: 2px;
+}
+
+/* Filters */
+.shop__filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.shop__categories {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.shop__category-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.shop__category-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.shop__category-btn.active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.shop__sort {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.shop__sort label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.shop__sort select {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.shop__sort select:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.shop__sort select option {
+  background: #000;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .shop {
+    padding: 5rem 0 3rem;
+  }
+
+  .shop__title {
+    font-size: 2rem;
+  }
+
+  .shop__subtitle {
+    font-size: 1rem;
+  }
+
+  .shop__filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .shop__categories {
+    width: 100%;
+  }
+
+  .shop__category-btn {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+    text-align: center;
+  }
+
+  .shop__sort {
+    width: 100%;
+  }
+
+  .shop__sort select {
+    flex: 1;
+  }
+}

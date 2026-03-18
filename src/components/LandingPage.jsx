@@ -19,18 +19,21 @@ export default function LandingPage({ onEnter }) {
 
   return (
     <div className={`landing-page ${isVisible ? 'visible' : ''}`}>
+      {/* Gate Image - Château de Chambord style */}
       <div 
-        className="landing-background" 
+        className="landing-background gate-image" 
         style={{ 
-          backgroundImage: 'url(https://images.unsplash.com/photo-1564507592333-c60657eea523?q=80&w=2071&auto=format&fit=crop)',
+          backgroundImage: 'url(https://images.unsplash.com/photo-1535537287769-e5b0709acb6d?q=80&w=2070&auto=format&fit=crop)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          filter: 'grayscale(100%) contrast(1.1)'
         }}
       />
       <div className="landing-overlay grain" />
+      
       <div className="landing-content">
         <h1 className="landing-logo">MONTREZ</h1>
-        <p className="landing-tagline">Luxury Redefined</p>
+        
         <button className="landing-enter-btn" onClick={handleEnter} aria-label="Enter Montrez">
           <span>Enter</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

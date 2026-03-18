@@ -56,7 +56,7 @@ export default function Admin() {
                 required
               />
             </div>
-            <button type="submit" className="btn btn-gold">
+            <button type="submit" className="btn btn-chrome">
               Login
             </button>
           </form>

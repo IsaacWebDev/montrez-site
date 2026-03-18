@@ -148,7 +148,7 @@ export default function Contact() {
               {errors.message && <span className="form-error">{errors.message}</span>}
             </div>
             
-            <button type="submit" className="btn btn-gold" disabled={isSubmitting}>
+            <button type="submit" className="btn btn-chrome" disabled={isSubmitting}>
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>

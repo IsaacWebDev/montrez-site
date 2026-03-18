@@ -34,7 +34,7 @@
   font-size: 0.9rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--chrome);
 }
 
 .contact__detail a {
@@ -44,7 +44,7 @@
 }
 
 .contact__detail a:hover {
-  color: var(--gold);
+  color: var(--chrome);
 }
 
 .contact__form {
@@ -81,7 +81,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--gold);
+  border-color: var(--chrome);
 }
 
 .form-group textarea {

@@ -59,7 +59,7 @@
   margin-bottom: var(--space-lg);
   padding-bottom: var(--space-md);
   border-bottom: 1px solid var(--mid-grey);
-  color: var(--gold);
+  color: var(--chrome);
 }
 
 .admin__nav {
@@ -91,8 +91,8 @@
 }
 
 .admin__nav-item.active {
-  color: var(--gold);
-  border-left-color: var(--gold);
+  color: var(--chrome);
+  border-left-color: var(--chrome);
   background: var(--dark-grey);
 }
 
@@ -164,7 +164,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: var(--gold);
+  background: var(--chrome);
   color: var(--black);
   display: flex;
   align-items: center;
@@ -217,7 +217,7 @@
 
 .card-title {
   font-size: 1.2rem;
-  color: var(--gold);
+  color: var(--chrome);
   margin: 0;
 }
 
@@ -244,7 +244,7 @@
 }
 
 .dashboard-card:hover {
-  border-color: var(--gold);
+  border-color: var(--chrome);
   transform: translateY(-2px);
 }
 
@@ -331,7 +331,7 @@
 }
 
 .activity-badge--lead {
-  background: var(--gold);
+  background: var(--chrome);
   color: var(--black);
 }
 
@@ -409,7 +409,7 @@
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: var(--gold);
+  border-color: var(--chrome);
 }
 
 .form-group small {
@@ -443,7 +443,7 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--gold);
+  color: var(--chrome);
 }
 
 .admin-table td {
@@ -461,7 +461,7 @@
 }
 
 .badge-active {
-  background: var(--gold);
+  background: var(--chrome);
   color: var(--black);
 }
 

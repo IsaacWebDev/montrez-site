@@ -13,7 +13,7 @@ export default function Hero() {
             Premium fashion for those who dare to stand out
           </p>
           <div className="hero__cta">
-            <a href="#collections" className="btn btn-gold">
+            <a href="#collections" className="btn btn-chrome">
               Explore Collections
             </a>
             <a href="#about" className="btn">
