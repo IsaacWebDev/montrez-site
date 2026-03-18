@@ -5,6 +5,7 @@ export default function VideoIntro({ onComplete }) {
   const videoRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [canSkip, setCanSkip] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const video = videoRef.current
@@ -17,12 +18,20 @@ export default function VideoIntro({ onComplete }) {
       try {
         await video.play()
         setIsPlaying(true)
+        setIsLoading(false)
       } catch (err) {
         console.error('Video autoplay failed:', err)
         // If autoplay fails, allow immediate skip
         setCanSkip(true)
+        setIsLoading(false)
       }
     }
+
+    const handleLoadedData = () => {
+      setIsLoading(false)
+    }
+
+    video.addEventListener('loadeddata', handleLoadedData)
 
     // Small delay to ensure DOM is ready
     setTimeout(playVideo, 100)
@@ -36,6 +45,7 @@ export default function VideoIntro({ onComplete }) {
     return () => {
       clearTimeout(skipTimer)
       video.removeEventListener('ended', handleEnded)
+      video.removeEventListener('loadeddata', handleLoadedData)
     }
   }, [onComplete])
 
@@ -53,12 +63,20 @@ export default function VideoIntro({ onComplete }) {
 
   return (
     <div className="video-intro" onClick={handleClick}>
+      {isLoading && (
+        <div className="video-intro__loading">
+          <div className="spinner"></div>
+          <p className="loading-text">Loading cinematic experience...</p>
+        </div>
+      )}
+      
       <video
         ref={videoRef}
         className="video-intro__video"
         muted
         playsInline
         preload="auto"
+        style={{ opacity: isLoading ? 0 : 1 }}
       >
         <source src="/videos/intro.mp4" type="video/mp4" />
       </video>

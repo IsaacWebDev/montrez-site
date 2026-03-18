@@ -51,9 +51,13 @@ export default function Collections() {
               <div className="collection-card__content">
                 <h3 className="collection-card__title">{collection.title}</h3>
                 <p className="collection-card__description">{collection.description}</p>
-                <a href={`#collection-${collection.id}`} className="collection-card__link">
+                <button 
+                  className="collection-card__link" 
+                  onClick={() => alert(`Collection detail pages coming soon!\n\n"${collection.title}" will showcase:\n• Product gallery\n• Detailed descriptions\n• Sizing & availability\n• Purchase options`)}
+                  style={{ cursor: 'pointer', background: 'none', border: 'none', padding: 0, font: 'inherit', color: 'inherit', textAlign: 'left' }}
+                >
                   View Collection →
-                </a>
+                </button>
               </div>
             </article>
           ))}
