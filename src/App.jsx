@@ -35,9 +35,8 @@ function HomePage() {
   }
 
   const handlePasswordSuccess = () => {
-    // Skip video (it breaks the site) - go straight to main site
-    sessionStorage.setItem('montrez-entrance-complete', 'true')
-    setStage('site')
+    // Stage 2 → Stage 3: Show video intro (now compressed!)
+    setStage('video')
   }
 
   const handleVideoComplete = () => {
