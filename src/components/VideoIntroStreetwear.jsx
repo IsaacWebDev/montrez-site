@@ -6,16 +6,12 @@ export default function VideoIntroStreetwear({ onComplete }) {
   const [fadeOut, setFadeOut] = useState(false)
 
   useEffect(() => {
-    // Allow skip after 2 seconds
-    const skipTimer = setTimeout(() => setCanSkip(true), 2000)
-
-    // Auto-complete after 5 seconds (urban intro doesn't need 20MB video)
+    // Auto-complete after 5 seconds (no skip button)
     const autoComplete = setTimeout(() => {
       handleComplete()
     }, 5000)
 
     return () => {
-      clearTimeout(skipTimer)
       clearTimeout(autoComplete)
     }
   }, [])
@@ -27,14 +23,8 @@ export default function VideoIntroStreetwear({ onComplete }) {
     }, 500)
   }
 
-  const handleSkip = () => {
-    if (canSkip) {
-      handleComplete()
-    }
-  }
-
   return (
-    <div className={`video-intro-streetwear ${fadeOut ? 'fade-out' : ''}`} onClick={handleSkip}>
+    <div className={`video-intro-streetwear ${fadeOut ? 'fade-out' : ''}`}>
       {/* Urban Background - Concrete Wall */}
       <div className="urban-background">
         <div className="concrete-texture"></div>
@@ -63,19 +53,7 @@ export default function VideoIntroStreetwear({ onComplete }) {
       {/* Grain Overlay */}
       <div className="grain-overlay"></div>
 
-      {/* Skip Button */}
-      {canSkip && (
-        <button 
-          className="skip-btn animate-fade-in"
-          onClick={handleSkip}
-          aria-label="Skip intro"
-        >
-          <span>SKIP</span>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-            <path d="M5 10h10M10 5l5 5-5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-      )}
+
     </div>
   )
 }
