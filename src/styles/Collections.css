@@ -38,23 +38,18 @@
   position: relative;
   aspect-ratio: 3/4;
   overflow: hidden;
-  background: #1a1a1a; /* Neutral dark background for empty space */
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .collection-card__image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Show full product without cropping */
-  object-position: center center; /* Explicitly center all images vertically and horizontally */
+  object-fit: cover;
   transition: transform var(--transition-slow);
   filter: grayscale(100%) contrast(1.2);
 }
 
 .collection-card:hover .collection-card__image {
-  transform: scale(1.05); /* Subtle zoom on hover (within container) */
+  transform: scale(1.05);
 }
 
 .collection-card__overlay {
