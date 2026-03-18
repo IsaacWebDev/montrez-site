@@ -101,6 +101,15 @@ function AppRoutes() {
     window.scrollTo(0, 0)
   }, [location.pathname])
 
+  // Check if entrance is complete - if accessing non-home route directly, mark entrance as complete
+  useEffect(() => {
+    const hasCompletedEntrance = sessionStorage.getItem('montrez-entrance-complete')
+    if (!hasCompletedEntrance && location.pathname !== '/') {
+      // User is accessing a direct link (not homepage), skip entrance flow
+      sessionStorage.setItem('montrez-entrance-complete', 'true')
+    }
+  }, [location.pathname])
+
   return (
     <>
       {isTransitioning && <LoadingSpinner message="Loading..." />}
