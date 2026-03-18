@@ -24,14 +24,23 @@ export default function VideoIntro({ onComplete }) {
 
     const playVideo = async () => {
       try {
-        await video.play()
-        setIsPlaying(true)
-        setIsLoading(false)
+        // Ensure video is truly muted for autoplay
+        video.muted = true
+        video.volume = 0
+        
+        const playPromise = video.play()
+        if (playPromise !== undefined) {
+          await playPromise
+          console.log('Video playing successfully')
+          setIsPlaying(true)
+          setIsLoading(false)
+        }
       } catch (err) {
-        console.error('Video autoplay failed:', err)
-        // If autoplay fails, allow immediate skip
+        console.error('Video autoplay failed:', err.name, err.message)
+        // If autoplay fails, show skip immediately
         setCanSkip(true)
         setIsLoading(false)
+        // Don't auto-skip, let user click
       }
     }
 
@@ -105,10 +114,12 @@ export default function VideoIntro({ onComplete }) {
         className="video-intro__video"
         muted
         playsInline
+        autoPlay
         preload="auto"
         style={{ opacity: isLoading ? 0 : 1 }}
       >
         <source src="/videos/intro.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
       </video>
       
       <div className="video-intro__overlay grain" />
