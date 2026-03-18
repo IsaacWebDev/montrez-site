@@ -69,8 +69,10 @@
   text-transform: uppercase;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.2s;
-  opacity: 0;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+  opacity: 1; /* Force visible */
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+  position: relative;
+  z-index: 10;
 }
 
 .landing-enter-btn {
@@ -84,15 +86,16 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   background: transparent;
-  color: var(--chrome);
-  border: 1px solid var(--chrome);
+  color: var(--white);
+  border: 2px solid var(--white);
   cursor: pointer;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.6s;
-  opacity: 0;
+  opacity: 1; /* Force visible */
+  z-index: 10;
 }
 
 .landing-enter-btn::before {
@@ -102,7 +105,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: var(--chrome);
+  background: var(--white);
   transition: left 0.4s ease;
   z-index: -1;
 }
@@ -113,9 +116,9 @@
 
 .landing-enter-btn:hover {
   color: var(--black);
-  border-color: var(--chrome);
+  border-color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
 }
 
 .landing-enter-btn svg {
