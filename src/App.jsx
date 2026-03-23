@@ -19,6 +19,8 @@ import CollectionsPage from './pages/CollectionsPage'
 import ProductDetail from './components/ProductDetail'
 import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
+import CheckoutPage from './pages/CheckoutPage'
+import OrderConfirmationPage from './pages/OrderConfirmationPage'
 import './styles/theme.css'
 
 function HomePage() {
@@ -120,6 +122,8 @@ function AppRoutes() {
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/checkout" element={<CheckoutPage />} />
+        <Route path="/order/:orderId" element={<OrderConfirmationPage />} />
         <Route 
           path="/admin/*" 
           element={

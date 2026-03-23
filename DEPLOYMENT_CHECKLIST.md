@@ -1,396 +1,245 @@
-# 🚀 Montrez Backend API - Deployment Checklist
+# PayFast Integration - Deployment Checklist
 
 ## ✅ Pre-Deployment
 
-### 1. Dependencies Installed
-```bash
-cd C:\Users\isaac\.openclaw\workspace\montrez-site
-npm install
-```
+### 1. Dependencies
+- [ ] Run `npm install @supabase/supabase-js`
+- [ ] Verify package.json updated
+- [ ] Test local build: `npm run build`
 
-**Expected:** `resend` package added to dependencies
+### 2. Supabase Setup
+- [ ] Create Supabase account
+- [ ] Create new project
+- [ ] Run `database/schema.sql` in SQL Editor
+- [ ] Verify `orders` table exists
+- [ ] Copy Project URL → `NEXT_PUBLIC_SUPABASE_URL`
+- [ ] Copy anon key → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- [ ] Copy service_role key → `SUPABASE_SERVICE_ROLE_KEY`
 
-### 2. Environment Variables Set
+### 3. PayFast Setup (Sandbox)
+- [ ] Register at https://sandbox.payfast.co.za
+- [ ] Login to merchant dashboard
+- [ ] Go to Settings > Integration
+- [ ] Use sandbox credentials:
+  - Merchant ID: `10000100`
+  - Merchant Key: `46f0cd694581a`
+- [ ] Create secure passphrase → `PAYFAST_PASSPHRASE`
+- [ ] Set `PAYFAST_MODE=sandbox`
 
-**Local `.env` file:**
-```bash
+### 4. Resend Setup
+- [ ] Register at https://resend.com
+- [ ] Create API key → `RESEND_API_KEY`
+- [ ] Verify domain (or use onboarding@resend.dev for testing)
+- [ ] Set `EMAIL_FROM=MONTREZ <orders@montrez.co.za>`
+
+### 5. Environment Variables
+Update `.env`:
+```env
+NEXT_PUBLIC_SITE_URL=https://montrez.vercel.app
+PAYFAST_MERCHANT_ID=10000100
+PAYFAST_MERCHANT_KEY=46f0cd694581a
+PAYFAST_PASSPHRASE=your-secure-passphrase
+PAYFAST_MODE=sandbox
+NEXT_PUBLIC_SUPABASE_URL=https://xxxxx.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
+SUPABASE_SERVICE_ROLE_KEY=eyJ...
+RESEND_API_KEY=re_...
+EMAIL_FROM=MONTREZ <orders@montrez.co.za>
 ADMIN_TOKEN=montrez-admin-2026
-RESEND_API_KEY=re_xxxxxxxxxxxxx
+VITE_PASSWORD=NOTFOREVERYONE
 ```
 
-**Get Resend API Key:**
-- Visit: https://resend.com
-- Sign up (free 3,000 emails/month)
-- Dashboard → API Keys → Create
-- Copy key to `.env`
+## 🚀 Deployment
 
-### 3. Test Locally
-
+### 1. Vercel Setup
 ```bash
-npm run dev
-```
+# Install Vercel CLI
+npm i -g vercel
 
-**Test these URLs:**
-- http://localhost:3000/api/products ✅ Should return 15 products
-- http://localhost:3000/api/cart ✅ Should return empty cart with session ID
-
----
-
-## 🔧 Vercel Deployment
-
-### 1. Install Vercel CLI (if needed)
-
-```bash
-npm install -g vercel
-```
-
-### 2. Login to Vercel
-
-```bash
+# Login
 vercel login
-```
 
-### 3. Deploy
-
-```bash
-cd C:\Users\isaac\.openclaw\workspace\montrez-site
+# Deploy
 vercel --prod
 ```
 
-**Expected Output:**
-```
-✓ Deployed to production
-🔗 https://montrez-site-xxx.vercel.app
-```
-
-### 4. Set Environment Variables in Vercel
-
-**Option A: Vercel Dashboard**
-1. Go to: https://vercel.com/dashboard
-2. Select your project
-3. Settings → Environment Variables
-4. Add:
-   - `ADMIN_TOKEN` → `montrez-admin-2026` (or your secure token)
-   - `RESEND_API_KEY` → `re_xxxxxxxxxxxxx` (your Resend key)
-5. Apply to: Production, Preview, Development
-6. Save
-
-**Option B: Vercel CLI**
+### 2. Add Environment Variables to Vercel
 ```bash
-vercel env add ADMIN_TOKEN production
-vercel env add RESEND_API_KEY production
+vercel env add NEXT_PUBLIC_SITE_URL
+vercel env add PAYFAST_MERCHANT_ID
+vercel env add PAYFAST_MERCHANT_KEY
+vercel env add PAYFAST_PASSPHRASE
+vercel env add PAYFAST_MODE
+vercel env add NEXT_PUBLIC_SUPABASE_URL
+vercel env add NEXT_PUBLIC_SUPABASE_ANON_KEY
+vercel env add SUPABASE_SERVICE_ROLE_KEY
+vercel env add RESEND_API_KEY
+vercel env add EMAIL_FROM
+vercel env add ADMIN_TOKEN
+vercel env add VITE_PASSWORD
 ```
 
-### 5. Redeploy (if env vars were added after initial deploy)
+Or add via Vercel Dashboard:
+- Go to Project Settings > Environment Variables
+- Add all variables above
+- Apply to Production, Preview, Development
 
+### 3. Redeploy After Adding Env Vars
 ```bash
 vercel --prod
 ```
 
----
+## 🧪 Testing
 
-## 🧪 Post-Deployment Testing
-
-### 1. Test Products API
-
+### 1. Test Order Creation
 ```bash
-curl https://your-domain.vercel.app/api/products
-```
-
-**Expected:** JSON with 15 products
-
-### 2. Test Cart API
-
-```bash
-curl -X POST https://your-domain.vercel.app/api/cart \
+curl -X POST https://montrez.vercel.app/api/payment/initiate \
   -H "Content-Type: application/json" \
   -d '{
-    "productId": "essential-hoodie-black",
-    "name": "Essential Hoodie",
-    "price": 85,
-    "size": "L",
-    "quantity": 1
-  }'
-```
-
-**Expected:** JSON with cart and session ID
-
-### 3. Test Admin API
-
-```bash
-curl https://your-domain.vercel.app/api/admin/products \
-  -H "Authorization: Bearer montrez-admin-2026"
-```
-
-**Expected:** JSON with all products (admin view)
-
-### 4. Test Order Creation
-
-```bash
-curl -X POST https://your-domain.vercel.app/api/orders \
-  -H "Content-Type: application/json" \
-  -d '{
-    "items": [{
-      "productId": "essential-hoodie-black",
-      "name": "Essential Hoodie",
-      "price": 85,
-      "quantity": 1,
-      "size": "L"
-    }],
     "customer": {
-      "firstName": "Test",
-      "lastName": "User",
-      "email": "test@example.com"
+      "name": "Test User",
+      "email": "test@example.com",
+      "phone": "+27123456789"
     },
     "shipping": {
-      "method": "standard",
-      "address": "123 Test St",
-      "city": "Test City",
-      "postalCode": "12345",
-      "country": "Test Country"
+      "street": "123 Test St",
+      "city": "Johannesburg",
+      "postal_code": "2001",
+      "province": "Gauteng"
     },
-    "payment": {
-      "method": "test"
-    }
+    "items": [{
+      "productId": "test-01",
+      "name": "Test Product",
+      "price": 50000,
+      "quantity": 1
+    }],
+    "subtotal": 50000,
+    "shippingCost": 10000,
+    "total": 60000
   }'
 ```
 
-**Expected:** JSON with order ID and success message
-
----
-
-## 📊 Verification Checklist
-
-### API Endpoints Working ✅
-
-- [ ] `GET /api/products` - Returns products
-- [ ] `GET /api/products?category=Hoodies` - Filters work
-- [ ] `POST /api/cart` - Adds items to cart
-- [ ] `GET /api/cart` - Retrieves cart with session
-- [ ] `PUT /api/cart` - Updates item quantity
-- [ ] `DELETE /api/cart` - Removes items
-- [ ] `POST /api/orders` - Creates orders
-- [ ] `GET /api/orders?orderId=xxx` - Retrieves orders
-- [ ] `GET /api/admin/products` - Admin auth works
-- [ ] `POST /api/admin/products` - Admin can create products
-
-### Data & Files ✅
-
-- [ ] `products.json` exists with 8 original products
-- [ ] `data/products-expanded.json` exists with 15 products
-- [ ] `data/orders.json` will be auto-created on first order
-- [ ] `.env` has ADMIN_TOKEN and RESEND_API_KEY
-- [ ] Vercel environment variables are set
-
-### Documentation ✅
-
-- [ ] `BACKEND_API_COMPLETE.md` - Overview & summary
-- [ ] `api/API_DOCUMENTATION.md` - Full technical docs
-- [ ] `api/QUICK_START.md` - Frontend integration guide
-- [ ] `.env.example` - Environment template
-
----
-
-## 🔐 Security Checklist
-
-### Before Going Live
-
-- [ ] Change `ADMIN_TOKEN` to a secure random string
-  ```bash
-  # Generate secure token (PowerShell)
-  [Convert]::ToBase64String((1..32 | ForEach-Object { Get-Random -Maximum 256 }))
-  ```
-
-- [ ] Update CORS settings in production
-  ```javascript
-  // In each API file, change:
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  // To:
-  res.setHeader('Access-Control-Allow-Origin', 'https://yourdomain.com');
-  ```
-
-- [ ] Verify Resend domain (optional but recommended)
-  1. Resend Dashboard → Domains
-  2. Add your domain
-  3. Configure DNS records
-  4. Update email in `send-order-email.js`:
-     ```javascript
-     from: 'Montrez <orders@yourdomain.com>'
-     ```
-
-- [ ] Add rate limiting (recommended for production)
-  - Use Vercel Edge Config or middleware
-  - Limit API calls per IP/session
-
----
-
-## 🎨 Frontend Integration
-
-### 1. Update Frontend Config
-
-**Create `src/config/api.js`:**
-```javascript
-export const API_BASE_URL = import.meta.env.PROD
-  ? 'https://your-domain.vercel.app/api'
-  : '/api';
-```
-
-### 2. Update API Calls
-
-Replace hardcoded `/api` paths with `API_BASE_URL`:
-
-```javascript
-import { API_BASE_URL } from './config/api';
-
-// Before:
-fetch('/api/products')
-
-// After:
-fetch(`${API_BASE_URL}/products`)
-```
-
-### 3. Implement Cart Session Management
-
-```javascript
-// src/utils/cart.js
-export function getSessionId() {
-  let sessionId = localStorage.getItem('cart_session');
-  if (!sessionId) {
-    sessionId = `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-    localStorage.setItem('cart_session', sessionId);
+Expected response:
+```json
+{
+  "success": true,
+  "order": {
+    "id": "uuid",
+    "order_number": "MTZ-20260324-XXXXX",
+    "total": 60000,
+    "payment_status": "pending"
+  },
+  "payment": {
+    "url": "https://sandbox.payfast.co.za/eng/process",
+    "data": { ... }
   }
-  return sessionId;
-}
-
-export function setSessionId(sessionId) {
-  localStorage.setItem('cart_session', sessionId);
 }
 ```
 
----
+### 2. Test Payment Flow
+1. Create test order (above)
+2. Submit payment form to PayFast sandbox
+3. Complete payment with test card
+4. Verify order status updated in Supabase
+5. Check email received
 
-## 📈 Monitoring & Maintenance
+### 3. Verify Supabase
+```sql
+-- Check orders created
+SELECT * FROM orders ORDER BY created_at DESC LIMIT 10;
 
-### Check Vercel Logs
-
-```bash
-# View deployment logs
-vercel logs
-
-# View function logs
-vercel logs --follow
+-- Check payment statuses
+SELECT order_number, payment_status, total FROM orders;
 ```
 
-**Vercel Dashboard:**
-- Monitor API response times
-- Track error rates
-- View bandwidth usage
+### 4. Check Logs
+- Vercel Dashboard > Functions > Logs
+- Look for `[PayFast]` and `[Email]` logs
 
-### Check Resend Email Logs
+## 🔒 Production Checklist
 
-**Resend Dashboard:**
-- View sent emails
-- Check delivery status
-- Monitor quota usage (3K/month free)
+Before going live:
 
-### Monitor Orders
+### PayFast Production
+- [ ] Complete PayFast business verification
+- [ ] Get live merchant credentials
+- [ ] Update PayFast account with production URLs:
+  - Return URL: `https://montrez.co.za/api/payment/return`
+  - Cancel URL: `https://montrez.co.za/checkout?cancelled=true`
+  - Notify URL: `https://montrez.co.za/api/payment/callback`
+- [ ] Set `PAYFAST_MODE=live`
+- [ ] Update merchant ID and key
+- [ ] Test with small live transaction
 
-**Check orders file:**
-```bash
-# View orders (local development)
-cat data/orders.json
+### Email Production
+- [ ] Verify custom domain with Resend
+- [ ] Update `EMAIL_FROM` to verified domain
+- [ ] Test email delivery
+- [ ] Check spam ratings
 
-# Check order count
-Get-Content data/orders.json | ConvertFrom-Json | Select-Object -ExpandProperty orders | Measure-Object
-```
+### Security
+- [ ] Rotate `ADMIN_TOKEN`
+- [ ] Update `VITE_PASSWORD`
+- [ ] Keep `SUPABASE_SERVICE_ROLE_KEY` secret
+- [ ] Enable Supabase RLS policies
+- [ ] Review CORS settings
+- [ ] Enable rate limiting
 
----
-
-## 🐛 Common Issues & Fixes
-
-### Issue: 500 Error on API calls
-
-**Cause:** Environment variables not set  
-**Fix:**
-1. Check Vercel Dashboard → Environment Variables
-2. Ensure ADMIN_TOKEN and RESEND_API_KEY are set
-3. Redeploy: `vercel --prod`
-
-### Issue: Email not sending
-
-**Cause:** Invalid Resend API key  
-**Fix:**
-1. Verify key in Resend dashboard
-2. Update Vercel environment variable
-3. Note: API still works without email (returns HTML preview)
-
-### Issue: Admin endpoints return 401
-
-**Cause:** Missing or invalid Authorization header  
-**Fix:**
-```bash
-# Ensure header format is correct:
-Authorization: Bearer your-admin-token
-```
-
-### Issue: Cart not persisting
-
-**Cause:** Session ID not being saved  
-**Fix:**
-1. Check `X-Session-ID` header in requests
-2. Verify localStorage has `cart_session`
-3. Session expires after 24 hours (expected behavior)
-
-### Issue: Products not found
-
-**Cause:** Using wrong products file  
-**Fix:**
-- Customer API uses: `products.json` (8 items)
-- Expanded catalog: `data/products-expanded.json` (15 items)
-- Update `api/products.js` to use expanded file if needed
-
----
-
-## ✅ Final Checklist
-
-### Pre-Launch
-
-- [ ] All API endpoints tested and working
-- [ ] Environment variables set in Vercel
-- [ ] Admin token changed to secure value
-- [ ] Email service configured (Resend)
-- [ ] Frontend integrated with API
-- [ ] CORS configured for production domain
-- [ ] Error handling tested
-- [ ] Documentation reviewed
-
-### Post-Launch
-
+### Monitoring
+- [ ] Set up error tracking (Sentry)
 - [ ] Monitor Vercel function logs
-- [ ] Check Resend email delivery
-- [ ] Test complete purchase flow
-- [ ] Verify order storage
-- [ ] Monitor bandwidth usage
-- [ ] Set up alerts for errors
+- [ ] Monitor Supabase dashboard
+- [ ] Set up payment alerts
+- [ ] Monitor email delivery rates
 
----
+## 📊 Post-Deployment
 
-## 🎉 You're Ready to Launch!
+### Week 1
+- [ ] Monitor payment success rates
+- [ ] Check email delivery rates
+- [ ] Review error logs daily
+- [ ] Test on mobile devices
+- [ ] Collect user feedback
 
-Your Montrez backend API is **production-ready**.
+### Ongoing
+- [ ] Weekly revenue reports
+- [ ] Monthly payment reconciliation
+- [ ] Review failed payments
+- [ ] Optimize conversion rates
+- [ ] Update email templates
 
-**Next Steps:**
-1. Deploy to Vercel ✅
-2. Set environment variables ✅
-3. Test all endpoints ✅
-4. Integrate frontend ✅
-5. Add payment processing 💳
-6. Upload real product images 📸
-7. Launch! 🚀
+## 🚨 Rollback Plan
 
-**Questions?**
-- Check `BACKEND_API_COMPLETE.md` for overview
-- Read `api/API_DOCUMENTATION.md` for full API reference
-- Review `api/QUICK_START.md` for integration examples
+If issues occur:
 
-**Let's get your streetwear brand live! 💪🔥**
+1. **Revert to JSON storage**:
+   ```bash
+   git checkout HEAD^ api/orders.js
+   vercel --prod
+   ```
+
+2. **Disable PayFast**:
+   - Set `PAYFAST_MODE=disabled` temporarily
+   - Show "Coming Soon" on checkout
+
+3. **Emergency contact**:
+   - PayFast: support@payfast.co.za
+   - Supabase: https://supabase.com/support
+
+## ✅ Final Verification
+
+Before marking complete:
+- [ ] Test full checkout flow
+- [ ] Verify order confirmation email
+- [ ] Check Supabase order created
+- [ ] Confirm payment status updates
+- [ ] Test return URLs (success/cancel)
+- [ ] Verify ITN callback working
+- [ ] Test on multiple devices
+- [ ] Review all logs clean
+
+## 🎉 Ready for Production!
+
+Once all checkboxes complete, your PayFast integration is production-ready.
+
+**Congratulations! 🚀**

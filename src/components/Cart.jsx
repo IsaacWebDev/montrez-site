@@ -1,8 +1,10 @@
 import { motion, AnimatePresence } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import '../styles/Cart.css'
 
 export default function Cart() {
+  const navigate = useNavigate()
   const { cart, removeFromCart, updateQuantity, cartTotal, isCartOpen, setIsCartOpen } = useCart()
 
   const overlayVariants = {
@@ -23,7 +25,8 @@ export default function Cart() {
   }
 
   const handleCheckout = () => {
-    alert('Checkout functionality coming soon!')
+    setIsCartOpen(false)
+    navigate('/checkout')
   }
 
   return (
