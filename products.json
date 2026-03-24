@@ -16,7 +16,8 @@
       ],
       "inStock": true,
       "featured": true,
-      "tags": ["graphic", "limited", "heritage", "exclusive"]
+      "stock": 12,
+      "tags": ["graphic", "limited", "heritage", "exclusive", "new"]
     },
     {
       "id": "army-74-shorts",
@@ -126,6 +127,7 @@
       ],
       "inStock": true,
       "featured": false,
+      "stock": 3,
       "tags": ["bottoms", "military", "comfort", "luxury"]
     },
     {
