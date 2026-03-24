@@ -28,8 +28,11 @@ export default function ProductCard({ product }) {
   }
 
   const badge = getBadge()
-  const hasSecondImage = product.images && product.images.length > 1
-  const displayImage = isHovered && hasSecondImage ? product.images[1] : (product.images?.[0] || product.image)
+  const primaryImage = product.images?.[0] || product.image
+  const hasSecondImage = product.images && product.images.length > 1 && product.images[1]
+  
+  // Show 2nd image on hover if it exists, otherwise keep showing primary
+  const displayImage = (isHovered && hasSecondImage) ? product.images[1] : primaryImage
 
   return (
     <>
@@ -48,9 +51,15 @@ export default function ProductCard({ product }) {
             alt={product.name}
             className="product-card__image"
             loading="lazy"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.3 }}
+            onError={(e) => {
+              // Fallback to primary image if hover image fails to load
+              if (e.target.src !== primaryImage) {
+                e.target.src = primaryImage
+              }
+            }}
           />
           {badge && (
             <div className={`product-card__badge product-card__badge--${badge.type}`}>
