@@ -141,13 +141,13 @@ export default function ProductQuickView({ product, isOpen, onClose }) {
                     onClick={handleAddToCart}
                     disabled={!product.inStock}
                   >
-                    {product.inStock ? 'Add to Cart' : 'Sold Out'}
+                    {product.inStock ? 'SECURE YOURS' : 'SOLD OUT'}
                   </button>
                   <button
                     className="quick-view__details-btn"
                     onClick={handleViewDetails}
                   >
-                    View Full Details
+                    FULL DETAILS →
                   </button>
                 </div>
 
