@@ -72,7 +72,9 @@ export default function Shop() {
 
   // Debug logging
   console.log('Shop filters:', { 
-    selectedCategory, 
+    selectedCategory,
+    priceRange,
+    selectedSizes,
     totalProducts: products.length, 
     filteredCount: filteredProducts.length 
   })
@@ -245,7 +247,7 @@ export default function Shop() {
               {/* Products Grid */}
               {filteredProducts.length > 0 ? (
                 <ProductGrid 
-                  key={`${selectedCategory}-${sortBy}-${selectedSizes.join(',')}`}
+                  key={`${selectedCategory}-${sortBy}-${selectedSizes.join(',')}-${priceRange[0]}-${priceRange[1]}`}
                   products={filteredProducts} 
                 />
               ) : (
