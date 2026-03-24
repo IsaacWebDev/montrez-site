@@ -69,12 +69,17 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* CENTER: MONTREZ Logo */}
+          {/* CENTER: Château Logo */}
           <button 
             className="navbar__logo"
             onClick={handleLogoClick}
+            aria-label="MONTRÉZ Home"
           >
-            MONTREZ
+            <img 
+              src="/images/montrez-logo-chateau.jpg" 
+              alt="MONTRÉZ" 
+              className="navbar__logo-image"
+            />
           </button>
 
           {/* RIGHT: Search + Cart Icons */}
