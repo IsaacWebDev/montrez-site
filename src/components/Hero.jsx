@@ -13,18 +13,18 @@ export default function Hero() {
       <div className="hero__content container">
         <div className="hero__text fade-in">
           <h1 className="hero__title">
-            Luxury<br/>
-            Redefined
+            PAS POUR<br/>
+            TOUT LE MONDE
           </h1>
           <p className="hero__subtitle">
-            Premium fashion for those who dare to stand out
+            European luxury streetwear. Not for everyone.
           </p>
           <div className="hero__cta">
             <a href="#collections" className="btn btn-chrome">
-              Explore Collections
+              ENTER COLLECTION
             </a>
             <a href="#about" className="btn">
-              Our Story
+              DISCOVER MONTRÉZ
             </a>
           </div>
         </div>

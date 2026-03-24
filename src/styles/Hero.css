@@ -111,9 +111,12 @@
   margin-bottom: var(--space-md);
   animation-delay: 0.2s;
   color: #ffffff !important; /* Force white for hero */
-  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+  text-shadow: 
+    0 0 40px rgba(0, 240, 255, 0.4),
+    0 4px 25px rgba(0, 0, 0, 0.9);
   position: relative;
   z-index: 3;
+  letter-spacing: 0.25em;
 }
 
 .hero__subtitle {
@@ -138,14 +141,31 @@
   z-index: 3;
 }
 
-/* Hero buttons - white border/text (exception to light theme) */
+/* Hero buttons - electric blue CTAs */
+.hero__cta .btn-chrome {
+  background: #00F0FF !important;
+  color: #000000 !important;
+  border: none !important;
+}
+
+.hero__cta .btn-chrome:hover {
+  box-shadow: 
+    0 0 30px rgba(0, 240, 255, 0.6),
+    0 0 60px rgba(0, 240, 255, 0.4),
+    0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
 .hero__cta .btn {
   border-color: #ffffff !important;
   color: #ffffff !important;
 }
 
 .hero__cta .btn::before {
-  background: #ffffff !important;
+  background: #00F0FF !important;
+}
+
+.hero__cta .btn:hover {
+  border-color: #00F0FF !important;
 }
 
 .hero__cta .btn:hover {
