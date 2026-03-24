@@ -70,6 +70,13 @@ export default function Shop() {
     return true
   })
 
+  // Debug logging
+  console.log('Shop filters:', { 
+    selectedCategory, 
+    totalProducts: products.length, 
+    filteredCount: filteredProducts.length 
+  })
+
   // Sort products
   if (sortBy === 'price-low') {
     filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price)
@@ -237,7 +244,10 @@ export default function Shop() {
 
               {/* Products Grid */}
               {filteredProducts.length > 0 ? (
-                <ProductGrid products={filteredProducts} />
+                <ProductGrid 
+                  key={`${selectedCategory}-${sortBy}-${selectedSizes.join(',')}`}
+                  products={filteredProducts} 
+                />
               ) : (
                 <div className="shop__no-results">
                   <p>No products found matching your filters.</p>
