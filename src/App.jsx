@@ -6,6 +6,7 @@ import PasswordEmailModal from './components/PasswordEmailModal'
 import VideoIntro from './components/VideoIntro'
 import VideoIntroStreetwear from './components/VideoIntroStreetwear'
 import LoadingSpinner from './components/LoadingSpinner'
+import AnnouncementBar from './components/AnnouncementBar'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Collections from './components/Collections'
@@ -75,6 +76,7 @@ function HomePage() {
       {/* Stage 4: Main Site */}
       {stage === 'site' && (
         <>
+          <AnnouncementBar />
           <Navbar />
           <Hero />
           <Collections />
@@ -115,6 +117,7 @@ function AppRoutes() {
   return (
     <>
       {isTransitioning && <LoadingSpinner message="Loading..." />}
+      {location.pathname !== '/' && <AnnouncementBar />}
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<Shop />} />
