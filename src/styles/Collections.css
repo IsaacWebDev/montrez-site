@@ -90,7 +90,7 @@
 }
 
 .collection-card__link:hover {
-  color: #00F0FF;
+  color: #666666;
   transform: translateX(5px);
 }
 
