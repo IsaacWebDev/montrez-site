@@ -351,6 +351,23 @@
       "featured": true,
       "stock": 4,
       "tags": ["gothic", "fur", "crystal", "luxury", "statement", "new"]
+    },
+    {
+      "id": "four-star-shorts-black",
+      "sku": "MNTRZ-4ST-BLK",
+      "name": "Four-Star Vintage Wash Fleece Shorts - Black",
+      "price": 1000,
+      "currency": "USD",
+      "category": "Shorts",
+      "description": "Prestige in every stitch. Washed black heavyweight fleece with four white stars crowning bold MONTRÉZ text on the right leg. Elegant script M monogram on the left. Raw-cut hems. Contrast white drawstrings. Vintage acid-wash finish creates lived-in luxury. For those who earned their stars.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/four-star-shorts-black-front.jpg"
+      ],
+      "inStock": true,
+      "featured": false,
+      "stock": 10,
+      "tags": ["four-star", "vintage", "fleece", "monogram", "new"]
     }
   ]
 }
