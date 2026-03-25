@@ -232,6 +232,125 @@
       "featured": false,
       "stock": 9,
       "tags": ["revolution", "statement", "graphic", "anti-colonial", "new"]
+    },
+    {
+      "id": "baroque-hoodie-ivory",
+      "sku": "MNTRZ-BAR-IVY",
+      "name": "Baroque Heritage Zip Hoodie - Ivory",
+      "price": 1600,
+      "currency": "USD",
+      "category": "Outerwear",
+      "description": "Royal scrollwork meets split branding. Cream heavyweight fleece adorned with black baroque filigree down both sleeves. MON-TRÉZ label patches flank the cursive monogram. Crystal starburst pockets. 'Montrez Is The Dream' woven at the hem. Structured hood. European luxury in hoodie form.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "images": [
+        "/products/baroque-hoodie-ivory-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 5,
+      "tags": ["baroque", "luxury", "crystal", "heritage", "new"]
+    },
+    {
+      "id": "pearl-sherpa-puffer-cream",
+      "sku": "MNTRZ-PSP-CRM",
+      "name": "Pearl Royale Sherpa Puffer - Cream",
+      "price": 1800,
+      "currency": "USD",
+      "category": "Outerwear",
+      "description": "When pearls meet puffer. Cream sherpa fleece with cascading hand-applied faux pearls spelling Montrez in cursive script. Hood completely encrusted in multi-sized pearl clusters. Quilted puffer sleeves. Cropped silhouette. This is not outerwear—this is a statement of excess. For those who wear opulence.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/pearl-sherpa-puffer-cream-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 4,
+      "tags": ["pearl", "sherpa", "puffer", "luxury", "maximalist", "new"]
+    },
+    {
+      "id": "stardust-hoodie-slate",
+      "sku": "MNTRZ-STD-SLT",
+      "name": "Stardust Distressed Hoodie - Vintage Slate",
+      "price": 1500,
+      "currency": "USD",
+      "category": "Outerwear",
+      "description": "Acid-washed rebellion. Vintage slate grey fleece with intentional distressing—rips at chest, shoulders, sleeves. MONTRÉZ spelled in sparkling rhinestone mosaic. Scattered crystals and pearls constellation across the body. Drawstring-cinched hem. Lived-in luxury. For those who earned their scars.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/stardust-hoodie-slate-front.jpg"
+      ],
+      "inStock": true,
+      "featured": false,
+      "stock": 6,
+      "tags": ["distressed", "crystal", "acid-wash", "vintage", "new"]
+    },
+    {
+      "id": "pearl-zip-hoodie-white",
+      "sku": "MNTRZ-PRL-WHT",
+      "name": "Pearl Script Zip Hoodie - Pure White",
+      "price": 1700,
+      "currency": "USD",
+      "category": "Outerwear",
+      "description": "Tonal elegance. Pure white French terry with Montrez cursive script hand-applied in cream pearls. Hood cascades with multi-sized pearl clusters. Wrist accents in graduated scatter. Silver metal zipper. Monochrome luxury. Minimal body, maximum impact. For those who speak softly and carry opulence.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "images": [
+        "/products/pearl-zip-hoodie-white-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 7,
+      "tags": ["pearl", "luxury", "minimalist", "tonal", "new"]
+    },
+    {
+      "id": "pearl-zip-hoodie-pink",
+      "sku": "MNTRZ-PRL-PNK",
+      "name": "Pearl Script Zip Hoodie - Candy Pink",
+      "price": 1750,
+      "currency": "USD",
+      "category": "Outerwear",
+      "description": "Maximalist romance. Bubblegum pink heavyweight fleece with Montrez pearl script on chest AND both sleeves—the most embellished iteration. Hood densely encrusted with pearls. Split pockets. Garment-dyed luxury. This is not subtle. This is a statement. For those who refuse to blend in.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/pearl-zip-hoodie-pink-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 5,
+      "tags": ["pearl", "pink", "maximalist", "luxury", "new"]
+    },
+    {
+      "id": "pearl-zip-hoodie-black",
+      "sku": "MNTRZ-PRL-BLK",
+      "name": "Pearl Script Zip Hoodie - Noir",
+      "price": 1700,
+      "currency": "USD",
+      "category": "Outerwear",
+      "description": "High-contrast drama. Black French terry with white pearl cursive script creating stark visual impact. Hood cascades with cream pearls against deep black. Wrist accents. Silver zipper. The most striking colorway in the pearl series. Luxury without compromise. For those who command attention in monochrome.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "images": [
+        "/products/pearl-zip-hoodie-black-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 8,
+      "tags": ["pearl", "noir", "high-contrast", "luxury", "new"]
+    },
+    {
+      "id": "frost-gothic-hoodie-grey",
+      "sku": "MNTRZ-FGT-GRY",
+      "name": "Frost Gothic Fur-Lined Zip Hoodie - Heather Grey",
+      "price": 1850,
+      "currency": "USD",
+      "category": "Outerwear",
+      "description": "Gothic opulence meets streetwear. Heather grey fleece with Old English Montrez script in gleaming silver crystal on chest and both sleeves. All-over micro-rhinestone scatter creates subtle sparkle. Tan faux fur-lined hood. Custom chrome nameplate zipper pull. Oversized heavyweight silhouette. This is the throne piece.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "images": [
+        "/products/frost-gothic-hoodie-grey-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 4,
+      "tags": ["gothic", "fur", "crystal", "luxury", "statement", "new"]
     }
   ]
 }
