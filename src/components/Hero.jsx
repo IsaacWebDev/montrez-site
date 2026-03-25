@@ -35,14 +35,29 @@ export default function Hero() {
         const maxScroll = 800 // Stop animation at ~800px (near product section)
         const scrollProgress = Math.min(scrollY / maxScroll, 1)
         
+        // Debug logging
+        console.log('🔍 Scroll Debug:', {
+          scrollY,
+          maxScroll,
+          scrollProgress,
+          elementFound: !!heroTitle
+        })
+        
         if (scrollY < maxScroll) {
           // Parallax effect: move down at 0.5x scroll speed
           const translateY = scrollY * 0.5
-          heroTitle.style.transform = `translateY(${translateY}px)`
+          
+          // CRITICAL FIX: Combine with translateZ(0) for GPU acceleration
+          // The CSS has translateZ(0), so we must preserve it
+          heroTitle.style.transform = `translateY(${translateY}px) translateZ(0)`
+          
+          console.log('✨ Applied transform:', `translateY(${translateY}px) translateZ(0)`)
           
           // Gradual fade out
           const opacity = 1 - scrollProgress
           heroTitle.style.opacity = opacity
+          
+          console.log('✨ Applied opacity:', opacity)
           
           // Also fade subtitle and CTA for cohesive effect
           if (heroSubtitle) heroSubtitle.style.opacity = opacity
