@@ -368,6 +368,74 @@
       "featured": false,
       "stock": 10,
       "tags": ["four-star", "vintage", "fleece", "monogram", "new"]
+    },
+    {
+      "id": "pearl-flare-sweatpants-ivory",
+      "sku": "MNTRZ-PFL-IVY",
+      "name": "Pearl Cascade Flare Sweatpants - Ivory",
+      "price": 1400,
+      "currency": "USD",
+      "category": "Bottoms",
+      "description": "Elegance in motion. All-white heavyweight fleece with flowing pearl script on the thigh. The signature: pearl embellishment cascading from knee to hem—sparse at top, dense at bottom—creating an ombré pearl waterfall effect. Flared bell-bottom silhouette. Crystal-tipped drawstrings. For those who walk on clouds.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/pearl-flare-sweatpants-ivory-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 6,
+      "tags": ["pearl", "flare", "luxury", "crystal", "new"]
+    },
+    {
+      "id": "all-star-pinstripe-sweatpants-grey",
+      "sku": "MNTRZ-ASP-GRY",
+      "name": "All-Star Pinstripe Sweatpants - Heather Grey",
+      "price": 900,
+      "currency": "USD",
+      "category": "Bottoms",
+      "description": "Street meets suiting. Heather grey heavyweight fleece with vertical cream pinstripes running full-length. Ornate navy monogram + bold MONTRÉZ text on left thigh. Three airbrushed stars with glitter fill create graffiti-art aesthetic. Wide-leg silhouette. Cream drawstrings. For those who blur the lines.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "images": [
+        "/products/all-star-pinstripe-sweatpants-grey-front.jpg"
+      ],
+      "inStock": true,
+      "featured": false,
+      "stock": 12,
+      "tags": ["pinstripe", "stars", "wide-leg", "luxury", "new"]
+    },
+    {
+      "id": "starlight-denim-blue",
+      "sku": "MNTRZ-STL-BLU",
+      "name": "Starlight Wide-Leg Denim - Faded Blue",
+      "price": 1200,
+      "currency": "USD",
+      "category": "Bottoms",
+      "description": "Vintage cosmos. Medium-blue denim with aggressive vintage wash—sun-bleached fading, yellow staining, lived-in texture. Scattered white star embellishments create night-sky effect. Bold white MONTRÉZ serif typography across thighs. DÉPT MONTRÉZ Spring/Summer 2025 collection. Wide-leg, high-rise. For those who wear their history.",
+      "sizes": ["28", "30", "32", "34", "36"],
+      "images": [
+        "/products/starlight-denim-blue-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 8,
+      "tags": ["denim", "starlight", "vintage", "wide-leg", "new"]
+    },
+    {
+      "id": "starlight-denim-black",
+      "sku": "MNTRZ-STL-BLK",
+      "name": "Starlight Wide-Leg Denim - Washed Black",
+      "price": 1200,
+      "currency": "USD",
+      "category": "Bottoms",
+      "description": "Galaxy in black. Washed black heavyweight denim with subtle fading creating depth. Dense constellation of white/silver stars scattered across both legs—printed graphics + rhinestone studs. Bold white MONTRÉZ serif typography. DÉPT MONTRÉZ SS25. Wide-leg, high-rise. Silver hardware. For those who own the night.",
+      "sizes": ["28", "30", "32", "34", "36"],
+      "images": [
+        "/products/starlight-denim-black-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 7,
+      "tags": ["denim", "starlight", "noir", "wide-leg", "crystal", "new"]
     }
   ]
 }
