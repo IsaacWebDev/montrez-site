@@ -11,7 +11,7 @@ export default function ProductQuickView({ product, isOpen, onClose }) {
   const [showAddedConfirm, setShowAddedConfirm] = useState(false)
   const [expandedSection, setExpandedSection] = useState(null)
   const { addToCart } = useCart()
-  const navigate = useNavigate()
+  const navigate = useNavigate() // Keep for cart navigation
 
   const sizes = product?.sizes || ['S', 'M', 'L', 'XL']
   const images = product?.images || [product?.image]
@@ -63,11 +63,6 @@ export default function ProductQuickView({ product, isOpen, onClose }) {
 
   const handleViewCart = () => {
     navigate('/cart')
-    onClose()
-  }
-
-  const handleViewDetails = () => {
-    navigate(`/product/${product?.id}`)
     onClose()
   }
 
@@ -289,12 +284,6 @@ export default function ProductQuickView({ product, isOpen, onClose }) {
                     disabled={!product.inStock}
                   >
                     {product.inStock ? 'SECURE YOURS' : 'SOLD OUT'}
-                  </button>
-                  <button
-                    className="quick-view__details-btn"
-                    onClick={handleViewDetails}
-                  >
-                    FULL DETAILS →
                   </button>
                 </div>
 

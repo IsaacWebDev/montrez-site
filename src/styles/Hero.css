@@ -229,6 +229,7 @@
   background-color: #0a0a0a;
   position: relative;
   z-index: 1;
+  margin-bottom: 80px; /* Desktop spacing between hero editorial and product grid */
 }
 
 .editorial-image {
@@ -278,9 +279,6 @@
     font-size: clamp(70px, 16vw, 80px);
     letter-spacing: 0.08em;
     margin-top: -5vh;
-    
-    /* Disable scroll animation transforms on mobile for performance */
-    will-change: auto !important;
   }
 
   .hero__cta {
@@ -299,6 +297,7 @@
     grid-template-rows: 1fr 1fr;
     height: auto;
     gap: 4px;
+    margin-bottom: 60px; /* Mobile spacing between hero editorial and product grid */
   }
   
   .editorial-image {

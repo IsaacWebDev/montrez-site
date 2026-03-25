@@ -1,18 +1,13 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { useNavigate } from 'react-router-dom'
 import ProductQuickView from './ProductQuickView'
 import '../styles/ProductCard.css'
 
 export default function ProductCard({ product }) {
-  const navigate = useNavigate()
   const [showQuickView, setShowQuickView] = useState(false)
   const [isHovered, setIsHovered] = useState(false)
 
-  const handleClick = () => {
-    navigate(`/product/${product.id}`)
-  }
-
+  // Quick View is the ONLY interaction - no navigation to product pages
   const handleQuickView = (e) => {
     e.stopPropagation()
     setShowQuickView(true)
@@ -40,9 +35,10 @@ export default function ProductCard({ product }) {
         className="product-card"
         whileHover={{ y: -5 }}
         transition={{ duration: 0.2 }}
-        onClick={handleClick}
+        onClick={handleQuickView}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        style={{ cursor: 'pointer' }}
       >
         <div className="product-card__image-wrapper">
           <motion.img 
