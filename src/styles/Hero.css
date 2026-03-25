@@ -99,11 +99,22 @@
 .hero__title {
   margin-bottom: var(--space-md);
   animation-delay: 0.2s;
-  color: #ffffff !important; /* Force white for hero */
-  text-shadow: 0 4px 25px rgba(0, 0, 0, 0.9);
+  color: #FAF9F6 !important; /* Cream white for premium feel */
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 3;
-  letter-spacing: 0.25em;
+  
+  /* Premium Fashion Campaign Typography - OVERSIZED STATEMENT */
+  font-size: clamp(60px, 15vw, 160px);
+  font-weight: 900;
+  letter-spacing: 0.10em; /* 16-20px tracked out for ultra-luxury Vogue feel */
+  line-height: 0.95;
+  text-transform: uppercase;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  
+  /* Positioning: Upper third, stops before model's chest */
+  margin-top: -12vh;
+  max-width: 100%;
 }
 
 .hero__subtitle {
@@ -194,6 +205,50 @@
   color: #ffffff;
 }
 
+/* Editorial 2-Column Image Grid - Premium Magazine Spread */
+.hero-editorial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  width: 100%;
+  height: 750px;
+  background-color: #0a0a0a;
+  position: relative;
+  z-index: 1;
+}
+
+.editorial-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.editorial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.editorial-image:hover img {
+  transform: scale(1.02);
+}
+
+/* Tablet Responsive (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hero__title {
+    font-size: clamp(100px, 13vw, 140px);
+    letter-spacing: 0.09em;
+  }
+  
+  .hero-editorial-grid {
+    height: 700px;
+  }
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .hero {
@@ -205,6 +260,12 @@
     width: 15%;
   }
 
+  .hero__title {
+    font-size: clamp(70px, 16vw, 80px);
+    letter-spacing: 0.08em;
+    margin-top: -5vh;
+  }
+
   .hero__cta {
     flex-direction: column;
     align-items: center;
@@ -213,6 +274,18 @@
   .hero__cta .btn {
     width: 100%;
     max-width: 300px;
+  }
+  
+  /* Stack editorial images vertically on mobile */
+  .hero-editorial-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: auto;
+    gap: 4px;
+  }
+  
+  .editorial-image {
+    height: 600px;
   }
 }
 
@@ -223,6 +296,15 @@
 
   .hero__bottom-fade {
     height: 150px;
+  }
+  
+  .hero__title {
+    font-size: clamp(60px, 18vw, 75px);
+    letter-spacing: 0.07em;
+  }
+  
+  .editorial-image {
+    height: 500px;
   }
 }
 
