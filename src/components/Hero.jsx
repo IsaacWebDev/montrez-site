@@ -47,11 +47,7 @@ export default function Hero() {
           const opacity = 1 - scrollProgress
           heroTitle.style.opacity = opacity
           
-          // UPDATE DEBUG OUTPUT (visible on screen)
-          const debug = document.getElementById('scroll-debug')
-          if (debug) {
-            debug.textContent = `Scroll: ${scrollY}px | TranslateY: ${translateY}px | Opacity: ${opacity.toFixed(2)} | Element: FOUND ✅`
-          }
+
           
           // Also fade subtitle and CTA for cohesive effect
           if (heroSubtitle) heroSubtitle.style.opacity = opacity
@@ -87,24 +83,6 @@ export default function Hero() {
   
   return (
     <>
-      {/* DEBUG OUTPUT - Shows live scroll values */}
-      <div id="scroll-debug" style={{
-        position: 'fixed',
-        top: '10px',
-        right: '10px',
-        background: 'rgba(0,0,0,0.9)',
-        color: '#00ff00',
-        padding: '15px',
-        zIndex: 99999,
-        fontFamily: 'monospace',
-        fontSize: '14px',
-        border: '2px solid #00ff00',
-        borderRadius: '8px',
-        minWidth: '300px'
-      }}>
-        Scroll: 0px | TranslateY: 0px | Opacity: 1.00
-      </div>
-      
       <section className="hero grain">
         {/* Side Fades (for portrait image in wide container) */}
         <div className="hero__side-fade-left" aria-hidden="true"></div>
