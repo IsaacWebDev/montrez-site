@@ -147,6 +147,91 @@
       "inStock": true,
       "featured": false,
       "tags": ["reflective", "chrome", "limited", "statement"]
+    },
+    {
+      "id": "kiss-kiss-tee",
+      "sku": "MNTRZ-KIS-001",
+      "name": "Kiss Kiss Allover Tee",
+      "price": 600,
+      "currency": "USD",
+      "category": "T-Shirts",
+      "description": "Romance meets rebellion. White European cotton adorned with scarlet lipstick marks—each kiss a statement of desire, each stain a badge of confidence. The collar bears your allegiance in red. For those who leave an impression.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/kiss-kiss-tee-front.jpg"
+      ],
+      "inStock": true,
+      "featured": false,
+      "stock": 8,
+      "tags": ["graphic", "romance", "playful", "new"]
+    },
+    {
+      "id": "military-dreams-tee",
+      "sku": "MNTRZ-MIL-001",
+      "name": "Military Dreams Studded Tee",
+      "price": 650,
+      "currency": "USD",
+      "category": "T-Shirts",
+      "description": "Fortis fortuna adiuvat—fortune favors the bold. Combat-inspired graphics meet punk hardware. Raw-cut sleeves studded with military grommets, soldier art from forgotten wars, and a Latin warrior's creed. Battlefield elegance for those who fight for their dreams.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/military-dreams-tee-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 6,
+      "tags": ["military", "studded", "combat", "limited", "new"]
+    },
+    {
+      "id": "panther-guard-tee",
+      "sku": "MNTRZ-PAN-001",
+      "name": "Panther Guard Tee",
+      "price": 600,
+      "currency": "USD",
+      "category": "T-Shirts",
+      "description": "The kingdom is yours to claim. Two youth walk a black panther toward the château gates, power on a leash. Old English lettering crowns the scene. Monochrome defiance. Street art meets heraldic pride. For those who guard their own empire.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/panther-guard-tee-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 10,
+      "tags": ["kingdom", "power", "graphic", "heritage"]
+    },
+    {
+      "id": "heritage-polo-black",
+      "sku": "MNTRZ-POL-BLK",
+      "name": "Heritage Polo - Noir",
+      "price": 850,
+      "currency": "USD",
+      "category": "Polos",
+      "description": "Where the château meets the country club. Black premium piqué cotton, striped collar, French tricolor flag, and the number 3 on the sleeve. Castle and horseman emblazoned on the chest. Luxury sport for those who own the game.",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "images": [
+        "/products/heritage-polo-black-front.jpg"
+      ],
+      "inStock": true,
+      "featured": true,
+      "stock": 7,
+      "tags": ["polo", "luxury", "heritage", "french", "new"]
+    },
+    {
+      "id": "revolution-tee",
+      "sku": "MNTRZ-REV-001",
+      "name": "Revolution Tee - Black",
+      "price": 600,
+      "currency": "USD",
+      "category": "T-Shirts",
+      "description": "The past falls before the present. A modern figure in Montréz hoodie defeats the colonial soldier at the castle gates. Old English script seals the victory. Monochrome revolution. This is not fashion—this is the uprising. For those who take back what's theirs.",
+      "sizes": ["S", "M", "L", "XL"],
+      "images": [
+        "/products/revolution-tee-front.jpg"
+      ],
+      "inStock": true,
+      "featured": false,
+      "stock": 9,
+      "tags": ["revolution", "statement", "graphic", "anti-colonial", "new"]
     }
   ]
 }
