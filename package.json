@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "node build.js",
+    "build": "vite build",
     "preview": "vite preview",
     "optimize-video": "node scripts/optimize-video.js",
     "test:api": "node test-backend.js",
