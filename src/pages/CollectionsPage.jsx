@@ -51,6 +51,13 @@ export default function CollectionsPage() {
         transition={{ duration: 0.5 }}
       >
         <div className="container">
+          {/* Breadcrumbs */}
+          <nav className="collections-page__breadcrumbs" aria-label="Breadcrumb">
+            <a href="/" className="collections-page__breadcrumb-link">Home</a>
+            <span className="collections-page__breadcrumb-separator">/</span>
+            <span className="collections-page__breadcrumb-current">Collections</span>
+          </nav>
+
           {/* Header */}
           <div className="collections-page__header">
             <h1 className="collections-page__title">Collections</h1>

@@ -89,7 +89,7 @@ export default function Collections() {
                   className="collection-card__link" 
                   onClick={handleViewCollection}
                 >
-                  VIEW COLLECTION →
+                  View Collection
                 </button>
               </div>
             </article>

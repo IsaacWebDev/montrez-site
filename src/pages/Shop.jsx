@@ -112,6 +112,13 @@ export default function Shop() {
         transition={{ duration: 0.5 }}
       >
         <div className="container">
+          {/* Breadcrumbs */}
+          <nav className="shop__breadcrumbs" aria-label="Breadcrumb">
+            <a href="/" className="shop__breadcrumb-link">Home</a>
+            <span className="shop__breadcrumb-separator">/</span>
+            <span className="shop__breadcrumb-current">Shop</span>
+          </nav>
+
           {/* Header */}
           <div className="shop__header">
             <h1 className="shop__title">Shop</h1>

@@ -1,84 +1,49 @@
-/* Product Grid Styles */
+/* Product Grid Styles - Premium Fashion Layout */
 .product-grid-section {
-  padding: 4rem 0;
+  padding: 0;
 }
 
 .product-grid__title {
-  font-size: 2rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 400;
   text-align: center;
   margin-bottom: 3rem;
-  letter-spacing: 3px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  gap: 24px;
   margin: 0 auto;
+  max-width: 100%;
 }
 
-/* Staggered grid - make some cards larger */
-.product-grid > *:nth-child(1),
-.product-grid > *:nth-child(6),
-.product-grid > *:nth-child(11) {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
-.product-grid > *:nth-child(4),
-.product-grid > *:nth-child(9) {
-  grid-row: span 2;
-}
-
-.product-grid > *:nth-child(1) .product-card__image-wrapper,
-.product-grid > *:nth-child(6) .product-card__image-wrapper,
-.product-grid > *:nth-child(11) .product-card__image-wrapper {
-  padding-bottom: 125%; /* Larger cards slightly taller */
-}
-
-@media (min-width: 769px) and (max-width: 1200px) {
+/* Responsive - Premium Fashion Breakpoints */
+@media (max-width: 1200px) {
   .product-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-  
-  .product-grid > *:nth-child(1),
-  .product-grid > *:nth-child(7) {
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-  
-  .product-grid > *:nth-child(4),
-  .product-grid > *:nth-child(10) {
-    grid-row: span 2;
+    gap: 20px;
   }
 }
 
-/* Responsive */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  
-  /* Simpler stagger on mobile */
-  .product-grid > *:nth-child(1),
-  .product-grid > *:nth-child(5),
-  .product-grid > *:nth-child(9) {
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-  
-  .product-grid > *:nth-child(4),
-  .product-grid > *:nth-child(6),
-  .product-grid > *:nth-child(11) {
-    grid-column: span 1;
-    grid-row: span 1;
+    gap: 16px;
   }
 
   .product-grid__title {
-    font-size: 1.5rem;
+    font-size: 0.875rem;
     margin-bottom: 2rem;
   }
 }
@@ -86,15 +51,6 @@
 @media (max-width: 480px) {
   .product-grid {
     grid-template-columns: 1fr;
-  }
-  
-  /* Reset stagger on very small screens */
-  .product-grid > * {
-    grid-column: span 1 !important;
-    grid-row: span 1 !important;
-  }
-  
-  .product-grid > * .product-card__image-wrapper {
-    padding-bottom: 125% !important;
+    gap: 16px;
   }
 }
