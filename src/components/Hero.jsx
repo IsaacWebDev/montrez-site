@@ -35,14 +35,6 @@ export default function Hero() {
         const maxScroll = 800 // Stop animation at ~800px (near product section)
         const scrollProgress = Math.min(scrollY / maxScroll, 1)
         
-        // Debug logging
-        console.log('🔍 Scroll Debug:', {
-          scrollY,
-          maxScroll,
-          scrollProgress,
-          elementFound: !!heroTitle
-        })
-        
         if (scrollY < maxScroll) {
           // Parallax effect: move down at 0.5x scroll speed
           const translateY = scrollY * 0.5
@@ -51,13 +43,15 @@ export default function Hero() {
           // The CSS has translateZ(0), so we must preserve it
           heroTitle.style.transform = `translateY(${translateY}px) translateZ(0)`
           
-          console.log('✨ Applied transform:', `translateY(${translateY}px) translateZ(0)`)
-          
           // Gradual fade out
           const opacity = 1 - scrollProgress
           heroTitle.style.opacity = opacity
           
-          console.log('✨ Applied opacity:', opacity)
+          // UPDATE DEBUG OUTPUT (visible on screen)
+          const debug = document.getElementById('scroll-debug')
+          if (debug) {
+            debug.textContent = `Scroll: ${scrollY}px | TranslateY: ${translateY}px | Opacity: ${opacity.toFixed(2)} | Element: FOUND ✅`
+          }
           
           // Also fade subtitle and CTA for cohesive effect
           if (heroSubtitle) heroSubtitle.style.opacity = opacity
@@ -93,6 +87,24 @@ export default function Hero() {
   
   return (
     <>
+      {/* DEBUG OUTPUT - Shows live scroll values */}
+      <div id="scroll-debug" style={{
+        position: 'fixed',
+        top: '10px',
+        right: '10px',
+        background: 'rgba(0,0,0,0.9)',
+        color: '#00ff00',
+        padding: '15px',
+        zIndex: 99999,
+        fontFamily: 'monospace',
+        fontSize: '14px',
+        border: '2px solid #00ff00',
+        borderRadius: '8px',
+        minWidth: '300px'
+      }}>
+        Scroll: 0px | TranslateY: 0px | Opacity: 1.00
+      </div>
+      
       <section className="hero grain">
         {/* Side Fades (for portrait image in wide container) */}
         <div className="hero__side-fade-left" aria-hidden="true"></div>
