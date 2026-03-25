@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import LandingPage from './components/LandingPage'
-import PasswordEmailModal from './components/PasswordEmailModal'
+import AccessGate from './components/AccessGate'
+import SignupPopup from './components/SignupPopup'
 import VideoIntro from './components/VideoIntro'
 import VideoIntroStreetwear from './components/VideoIntroStreetwear'
 import LoadingSpinner from './components/LoadingSpinner'
@@ -25,7 +26,7 @@ import OrderConfirmationPage from './pages/OrderConfirmationPage'
 import './styles/theme.css'
 
 function HomePage() {
-  // Four-stage flow: landing → password/email → video → site
+  // Four-stage flow: landing → access gate → video → site
   const [stage, setStage] = useState(() => {
     // Check if user has completed the full entrance sequence
     const hasCompletedEntrance = sessionStorage.getItem('montrez-entrance-complete')
@@ -33,11 +34,11 @@ function HomePage() {
   })
 
   const handleEnterClick = () => {
-    // Stage 1 → Stage 2: Show password/email modal
-    setStage('password')
+    // Stage 1 → Stage 2: Show access gate
+    setStage('access')
   }
 
-  const handlePasswordSuccess = () => {
+  const handleAccessSuccess = () => {
     // Stage 2 → Stage 3: Show video intro (now compressed!)
     setStage('video')
   }
@@ -63,9 +64,9 @@ function HomePage() {
         <LandingPage onEnter={handleEnterClick} />
       )}
       
-      {/* Stage 2: Password/Email Modal */}
-      {stage === 'password' && (
-        <PasswordEmailModal onSuccess={handlePasswordSuccess} />
+      {/* Stage 2: Access Gate (Password or Instagram) */}
+      {stage === 'access' && (
+        <AccessGate onSuccess={handleAccessSuccess} />
       )}
       
       {/* Stage 3: Video Intro (Ultra-compressed château video - 0.78MB) */}
@@ -73,9 +74,10 @@ function HomePage() {
         <VideoIntro onComplete={handleVideoComplete} />
       )}
       
-      {/* Stage 4: Main Site */}
+      {/* Stage 4: Main Site + Signup Popup */}
       {stage === 'site' && (
         <>
+          <SignupPopup />
           <AnnouncementBar />
           <Navbar />
           <Hero />

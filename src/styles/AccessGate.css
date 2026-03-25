@@ -1,0 +1,298 @@
+/* Access Gate - Redesigned with Choice-based UX */
+
+.access-gate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.access-gate.visible {
+  opacity: 1;
+}
+
+.access-gate-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #F2EDE6;
+  z-index: 1;
+}
+
+.access-card {
+  position: relative;
+  width: 90%;
+  max-width: 480px;
+  background: #0D0D0D;
+  padding: 3rem 2.5rem;
+  z-index: 10;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+}
+
+.access-logo {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 0.4em;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0 0 0.5rem 0;
+  font-family: 'Playfair Display', serif;
+}
+
+.access-subtitle {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: #888;
+  text-align: center;
+  margin: 0 0 3rem 0;
+  text-transform: uppercase;
+}
+
+/* Access Options */
+.access-option {
+  background: #1A1A1A;
+  padding: 1.75rem 1.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.access-option:hover {
+  background: #222;
+  border-color: #333;
+}
+
+.access-option.active {
+  background: #222;
+  border-color: #444;
+  cursor: default;
+}
+
+.access-option-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.05em;
+}
+
+.access-option-desc {
+  font-size: 0.875rem;
+  color: #888;
+  margin: 0;
+}
+
+/* Instagram Option */
+.instagram-option {
+  position: relative;
+  text-decoration: none;
+  display: block;
+}
+
+.instagram-icon {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.instagram-option:hover .instagram-icon {
+  color: #FFFFFF;
+}
+
+/* Password Form (shown when option is clicked) */
+.password-form {
+  margin-top: 1.5rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.password-input {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: #0D0D0D;
+  border: 1px solid #333;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.password-input::placeholder {
+  color: #555;
+}
+
+.password-input:focus {
+  outline: none;
+  border-color: #FFFFFF;
+  background: #111;
+}
+
+.password-input.error {
+  border-color: #EF4444;
+}
+
+.password-input.shake {
+  animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.password-error {
+  display: block;
+  color: #EF4444;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.password-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.password-submit,
+.password-cancel {
+  flex: 1;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-transform: uppercase;
+}
+
+.password-submit {
+  background: #FFFFFF;
+  color: #000000;
+}
+
+.password-submit:hover:not(:disabled) {
+  background: #F0F0F0;
+  transform: translateY(-2px);
+}
+
+.password-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.password-cancel {
+  background: transparent;
+  color: #888;
+  border: 1px solid #333;
+}
+
+.password-cancel:hover:not(:disabled) {
+  background: #1A1A1A;
+  border-color: #444;
+  color: #FFFFFF;
+}
+
+/* Divider */
+.access-divider {
+  display: flex;
+  align-items: center;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.access-divider::before,
+.access-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #333;
+}
+
+.access-divider span {
+  padding: 0 1rem;
+  color: #666;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .access-card {
+    padding: 2rem 1.5rem;
+    max-width: 95%;
+  }
+  
+  .access-logo {
+    font-size: 2.5rem;
+    letter-spacing: 0.3em;
+  }
+  
+  .access-subtitle {
+    font-size: 0.75rem;
+    margin-bottom: 2rem;
+  }
+  
+  .access-option {
+    padding: 1.5rem 1.25rem;
+  }
+  
+  .access-option-title {
+    font-size: 1rem;
+  }
+  
+  .access-option-desc {
+    font-size: 0.8125rem;
+  }
+  
+  .instagram-icon {
+    right: 1.25rem;
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .access-gate,
+  .password-form {
+    transition: none;
+    animation: none;
+  }
+  
+  .access-option {
+    transition: none;
+  }
+  
+  .password-submit:hover:not(:disabled) {
+    transform: none;
+  }
+  
+  .password-input.shake {
+    animation: none;
+  }
+}
