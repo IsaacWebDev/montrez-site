@@ -6,7 +6,7 @@ import DashboardPage from './admin/DashboardPage'
 import OrdersPage from './admin/OrdersPage'
 import ProductsPage from './admin/ProductsPage'
 import EmailsPage from './admin/EmailsPage'
-import '../styles/admin.css'
+import '../styles/Admin.css'
 
 function ProtectedRoute({ children }) {
   const isAuthenticated = localStorage.getItem('montrez-admin-auth') === 'true'
