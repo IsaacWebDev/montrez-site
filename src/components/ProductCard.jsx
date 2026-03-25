@@ -40,23 +40,25 @@ export default function ProductCard({ product }) {
         onMouseLeave={() => setIsHovered(false)}
         style={{ cursor: 'pointer' }}
       >
-        <div className="product-card__image-wrapper">
-          <motion.img 
-            key={displayImage}
-            src={displayImage} 
-            alt={product.name}
-            className="product-card__image"
-            loading="lazy"
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            onError={(e) => {
-              // Fallback to primary image if hover image fails to load
-              if (e.target.src !== primaryImage) {
-                e.target.src = primaryImage
-              }
-            }}
-          />
+        <div className="product-card__image-container">
+          <div className="product-card__image-wrapper">
+            <motion.img 
+              key={displayImage}
+              src={displayImage} 
+              alt={product.name}
+              className="product-card__image"
+              loading="lazy"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              onError={(e) => {
+                // Fallback to primary image if hover image fails to load
+                if (e.target.src !== primaryImage) {
+                  e.target.src = primaryImage
+                }
+              }}
+            />
+          </div>
           {badge && (
             <div className={`product-card__badge product-card__badge--${badge.type}`}>
               {badge.text}
