@@ -10,7 +10,7 @@ import AnnouncementBar from './components/AnnouncementBar'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Collections from './components/Collections'
-import About from './components/About'
+
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Admin from './components/Admin'
@@ -80,7 +80,6 @@ function HomePage() {
           <Navbar />
           <Hero />
           <Collections />
-          <About />
           <Contact />
           <Footer />
         </>

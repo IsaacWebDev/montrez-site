@@ -6,13 +6,14 @@
   min-height: auto !important;
 }
 
-/* Grid Layout: 3 cards horizontally on desktop */
+/* Grid Layout: 4 cards horizontally on desktop (4×2 grid for 8 items) */
 .collections__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
   max-width: 100%;
   margin: 0;
+  padding: 0 2rem;
 }
 
 .collection-card {
@@ -121,12 +122,7 @@
 @media (max-width: 1024px) {
   .collections__grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .collection-card:last-child {
-    grid-column: 1 / -1;
-    max-width: 50%;
-    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 }
 
@@ -134,12 +130,8 @@
 @media (max-width: 768px) {
   .collections__grid {
     grid-template-columns: 1fr;
-    gap: 1px;
-  }
-  
-  .collection-card:last-child {
-    grid-column: auto;
-    max-width: 100%;
+    gap: 15px;
+    padding: 0 1rem;
   }
   
   .collections__logo {

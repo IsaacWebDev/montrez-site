@@ -1,6 +1,58 @@
+import { useEffect } from 'react'
 import '../styles/Hero.css'
 
 export default function Hero() {
+  useEffect(() => {
+    // Disable scroll animation on mobile for performance
+    const isMobile = window.innerWidth <= 768
+    if (isMobile) return
+    
+    // Respect user's reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion) return
+    
+    const heroTitle = document.querySelector('.hero__title')
+    const heroSubtitle = document.querySelector('.hero__subtitle')
+    const heroCta = document.querySelector('.hero__cta')
+    
+    if (!heroTitle) return
+    
+    const handleScroll = () => {
+      const scrollY = window.scrollY
+      const maxScroll = 800 // Stop animation at ~800px (near product section)
+      const scrollProgress = Math.min(scrollY / maxScroll, 1)
+      
+      if (scrollY < maxScroll) {
+        // Parallax effect: move down at 0.5x scroll speed
+        const translateY = scrollY * 0.5
+        heroTitle.style.transform = `translateY(${translateY}px)`
+        
+        // Gradual fade out
+        const opacity = 1 - scrollProgress
+        heroTitle.style.opacity = opacity
+        
+        // Also fade subtitle and CTA for cohesive effect
+        if (heroSubtitle) heroSubtitle.style.opacity = opacity
+        if (heroCta) heroCta.style.opacity = opacity
+      }
+    }
+    
+    // Throttle scroll events for performance
+    let ticking = false
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          handleScroll()
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+    
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+  
   return (
     <>
       <section className="hero grain">
@@ -23,8 +75,8 @@ export default function Hero() {
               <a href="#collections" className="btn btn-chrome">
                 ENTER COLLECTION
               </a>
-              <a href="#about" className="btn">
-                DISCOVER MONTRÉZ
+              <a href="#contact" className="btn">
+                GET IN TOUCH
               </a>
             </div>
           </div>

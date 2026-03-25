@@ -19,6 +19,36 @@ const collections = [
     title: 'Embellished Denim',
     description: 'Luxury meets street culture',
     image: '/products/dazzled-shorts-front.jpg'
+  },
+  {
+    id: 4,
+    title: 'Premium Hoodies',
+    description: 'Luxury comfort meets street style',
+    image: '/products/speak-no-evil-front.jpg'
+  },
+  {
+    id: 5,
+    title: 'Statement Tees',
+    description: 'Bold graphics, clean lines',
+    image: '/products/money-front.jpg'
+  },
+  {
+    id: 6,
+    title: 'Distressed Denim',
+    description: 'Vintage wash authenticity',
+    image: '/products/dazzled-shorts-front.jpg'
+  },
+  {
+    id: 7,
+    title: 'Cargo Essentials',
+    description: 'Utility meets premium design',
+    image: '/products/speak-no-evil-front.jpg'
+  },
+  {
+    id: 8,
+    title: 'Oversized Fits',
+    description: 'Contemporary silhouettes redefined',
+    image: '/products/money-front.jpg'
   }
 ]
 

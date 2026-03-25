@@ -115,6 +115,12 @@
   /* Positioning: Upper third, stops before model's chest */
   margin-top: -12vh;
   max-width: 100%;
+  
+  /* Performance optimizations for smooth scroll animation */
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
 .hero__subtitle {
@@ -127,6 +133,10 @@
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9);
   position: relative;
   z-index: 3;
+  
+  /* Performance optimizations for scroll animation */
+  will-change: opacity;
+  transition: opacity 0.1s ease-out;
 }
 
 .hero__cta {
@@ -137,6 +147,10 @@
   animation-delay: 0.6s;
   position: relative;
   z-index: 3;
+  
+  /* Performance optimizations for scroll animation */
+  will-change: opacity;
+  transition: opacity 0.1s ease-out;
 }
 
 /* Hero buttons - Premium Luxury CTAs */
@@ -264,6 +278,9 @@
     font-size: clamp(70px, 16vw, 80px);
     letter-spacing: 0.08em;
     margin-top: -5vh;
+    
+    /* Disable scroll animation transforms on mobile for performance */
+    will-change: auto !important;
   }
 
   .hero__cta {
