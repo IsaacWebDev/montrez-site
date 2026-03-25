@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import './styles/admin.css'
+import './styles/Admin.css'
 
 // Remove loading screen once React mounts
 const removeLoadingScreen = () => {
