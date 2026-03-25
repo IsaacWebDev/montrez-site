@@ -35,18 +35,7 @@
   z-index: 1;
 }
 
-/* Subtle Blur for Premium Look */
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  z-index: 1;
-}
+/* Removed backdrop-filter blur for performance */
 
 /* Side Fade to Black (for portrait image in wide container) */
 .hero .hero__side-fade-left,
@@ -139,33 +128,41 @@
   z-index: 3;
 }
 
-/* Hero buttons - grey CTAs */
+/* Hero buttons - Premium Luxury CTAs */
+/* Primary CTA: White background with black text (high contrast, luxury) */
 .hero__cta .btn-chrome {
-  background: #666666 !important;
-  color: #ffffff !important;
-  border: none !important;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #ffffff !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
 }
 
 .hero__cta .btn-chrome:hover {
-  background: #555555 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3) !important;
 }
 
+/* Secondary CTA: Transparent with white border and text */
 .hero__cta .btn {
-  border-color: #ffffff !important;
+  background: transparent !important;
+  border: 2px solid #ffffff !important;
   color: #ffffff !important;
 }
 
 .hero__cta .btn::before {
-  background: #666666 !important;
+  background: #ffffff !important;
 }
 
 .hero__cta .btn:hover {
-  border-color: #666666 !important;
-}
-
-.hero__cta .btn:hover {
+  background: transparent !important;
+  border-color: #ffffff !important;
   color: #000000 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2) !important;
 }
 
 .hero__scroll {
