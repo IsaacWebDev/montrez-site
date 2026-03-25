@@ -69,14 +69,14 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* CENTER: Château Logo */}
+          {/* CENTER: Castle Logo */}
           <button 
             className="navbar__logo"
             onClick={handleLogoClick}
             aria-label="MONTRÉZ Home"
           >
             <img 
-              src="/images/montrez-logo-chateau.jpg" 
+              src="/images/montrez-logo-castle.jpg" 
               alt="MONTRÉZ" 
               className="navbar__logo-image"
             />

@@ -1,7 +1,7 @@
 /* Collections Section - Clean 3-Column Grid */
 
 .collections {
-  background: var(--white);
+  background: #F8F5F0;
   padding: 0 !important;
   min-height: auto !important;
 }
@@ -102,10 +102,11 @@
 }
 
 .collections__logo {
-  max-width: 200px;
+  width: 200px;
   height: auto;
   margin: 0 auto 2rem;
   display: block;
+  opacity: 0.85;
 }
 
 .collections__load-more {
