@@ -6,49 +6,49 @@ const collections = [
     id: 1,
     title: 'Château Collection',
     description: 'Vintage-inspired streetwear excellence',
-    image: '/products/speak-no-evil-front.jpg'
+    image: '/images/collections/collection-1.jpg'
   },
   {
     id: 2,
     title: 'Urban Essentials',
     description: 'Bold graphics, timeless style',
-    image: '/products/money-front.jpg'
+    image: '/images/collections/collection-2.jpg'
   },
   {
     id: 3,
     title: 'Embellished Denim',
     description: 'Luxury meets street culture',
-    image: '/products/dazzled-shorts-front.jpg'
+    image: '/images/collections/collection-3.jpg'
   },
   {
     id: 4,
     title: 'Premium Hoodies',
     description: 'Luxury comfort meets street style',
-    image: '/products/speak-no-evil-front.jpg'
+    image: '/images/collections/collection-4.jpg'
   },
   {
     id: 5,
     title: 'Statement Tees',
     description: 'Bold graphics, clean lines',
-    image: '/products/money-front.jpg'
+    image: '/images/collections/collection-5.jpg'
   },
   {
     id: 6,
     title: 'Distressed Denim',
     description: 'Vintage wash authenticity',
-    image: '/products/dazzled-shorts-front.jpg'
+    image: '/images/collections/collection-6.jpg'
   },
   {
     id: 7,
     title: 'Cargo Essentials',
     description: 'Utility meets premium design',
-    image: '/products/speak-no-evil-front.jpg'
+    image: '/images/collections/collection-7.jpg'
   },
   {
     id: 8,
     title: 'Oversized Fits',
     description: 'Contemporary silhouettes redefined',
-    image: '/products/money-front.jpg'
+    image: '/images/collections/collection-8.jpg'
   }
 ]
 
