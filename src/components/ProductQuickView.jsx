@@ -88,6 +88,7 @@ export default function ProductQuickView({ product, isOpen, onClose }) {
     visible: { 
       opacity: 1, 
       scale: 1,
+      // NO x, y, or position properties here to avoid conflicts!
       transition: { type: 'spring', damping: 25, stiffness: 300 }
     },
     exit: { 

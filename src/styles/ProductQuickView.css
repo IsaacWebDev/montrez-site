@@ -1,22 +1,22 @@
-/* Quick View Overlay */
+/* Quick View Overlay - Flexbox Centering */
 .quick-view-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0; /* top: 0; right: 0; bottom: 0; left: 0; */
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   z-index: 1200;
+  
+  /* FLEXBOX CENTERING - MOST RELIABLE */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px; /* Prevent edge touching */
 }
 
-/* Quick View Modal - Bigger */
+/* Quick View Modal - Centered by Parent Flex */
 .quick-view {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) !important;
+  position: relative; /* NOT fixed! */
   width: min(1200px, 95vw);
   max-height: 90vh;
   background: white;
@@ -24,7 +24,10 @@
   border-radius: 0;
   overflow: hidden;
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.4);
-  margin: 0 !important;
+  margin: 0;
+  
+  /* Remove fixed positioning and transforms */
+  /* DO NOT USE: position: fixed, top: 50%, left: 50%, transform: translate(-50%, -50%) */
 }
 
 .quick-view__close {
