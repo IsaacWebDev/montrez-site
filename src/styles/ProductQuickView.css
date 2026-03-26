@@ -18,7 +18,7 @@
 .quick-view {
   position: relative; /* NOT fixed! */
   width: min(1200px, 95vw);
-  max-height: 90vh;
+  max-height: 85vh; /* ← REDUCED from 90vh */
   background: white;
   z-index: 1201;
   border-radius: 0;
@@ -54,26 +54,28 @@
 .quick-view__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-height: 90vh;
+  max-height: 85vh; /* Match modal height */
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 /* Images */
 .quick-view__images {
-  padding: 3rem;
+  padding: 2rem; /* ← REDUCED from 3rem */
   background: #fafafa;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem; /* ← REDUCED from 1.5rem */
   position: relative;
   overflow: hidden;
+  max-height: 85vh; /* ← ADDED */
 }
 
 .quick-view__main-image {
   width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
+  max-height: 400px; /* ← CONSTRAIN height */
+  object-fit: contain; /* ← CHANGED from cover to contain */
+  object-position: center;
 }
 
 .quick-view__thumbnails {
@@ -105,10 +107,10 @@
 
 /* Details */
 .quick-view__details {
-  padding: 3rem;
+  padding: 2rem; /* ← REDUCED from 3rem */
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.25rem; /* ← REDUCED from 2rem */
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -145,7 +147,7 @@
 }
 
 .quick-view__sizes {
-  margin-top: 1rem;
+  margin-top: 0.5rem; /* ← REDUCED from 1rem */
 }
 
 .quick-view__size-buttons {
@@ -185,6 +187,12 @@
   flex-direction: column;
   gap: 0.75rem;
   margin-top: auto;
+  position: sticky; /* ← ADDED: Make CTA sticky */
+  bottom: 0; /* ← ADDED */
+  background: white; /* ← ADDED */
+  padding: 1.5rem 0 0 0; /* ← ADDED */
+  border-top: 1px solid #eee; /* ← ADDED */
+  z-index: 10; /* ← ADDED */
 }
 
 .quick-view__add-btn {
@@ -343,6 +351,7 @@
 
 /* Accordion */
 .quick-view__accordion {
+  display: none; /* ← HIDE accordions in Quick View to save space */
   border-top: 1px solid #e0e0e0;
   padding-top: 1rem;
   margin-top: 1rem;
