@@ -23,14 +23,10 @@ export default function Footer() {
             </div>
             <div className="footer__column">
               <h4>Follow</h4>
-              {/* TODO: Replace with actual Montrez social media URLs */}
-              <a href="https://instagram.com/montrez_official" target="_blank" rel="noopener noreferrer">
+              <a href="https://instagram.com/MNTRZ.NFE" target="_blank" rel="noopener noreferrer">
                 Instagram
               </a>
-              <a href="https://twitter.com/montrez_brand" target="_blank" rel="noopener noreferrer">
-                Twitter
-              </a>
-              <a href="https://tiktok.com/@montrez_official" target="_blank" rel="noopener noreferrer">
+              <a href="https://tiktok.com/@montrezofficial" target="_blank" rel="noopener noreferrer">
                 TikTok
               </a>
             </div>
