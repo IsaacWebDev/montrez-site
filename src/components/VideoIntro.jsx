@@ -100,11 +100,11 @@ export default function VideoIntro({ onComplete }) {
         playsInline
         autoPlay
         preload="auto"
-        poster="/images/hero-editorial.jpg"
+        poster="/images/intro-chateau-poster.jpg"
         style={{ opacity: isLoading ? 0 : 1 }}
       >
-        {/* Use compressed video for better performance (398KB vs 822KB) */}
-        <source src="/videos/intro-pexels-compressed.mp4" type="video/mp4" />
+        {/* Cinematic Château de Chambord intro video (2.4MB) */}
+        <source src="/videos/intro-chateau.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
