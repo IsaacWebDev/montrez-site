@@ -1,4 +1,4 @@
-/* Landing Page - SolveXAI Style (Simple & Clean) */
+/* Landing Page - Premium Luxury Entry Experience */
 
 .landing-page-wrapper {
   position: fixed;
@@ -8,9 +8,15 @@
   height: 100vh;
   z-index: 9999;
   overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
 }
 
-/* Gate Background Image */
+.landing-page-wrapper.visible {
+  opacity: 1;
+}
+
+/* High-Quality Gate Background Image */
 .landing-background-image {
   position: absolute;
   top: 0;
@@ -21,22 +27,45 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: grayscale(100%) contrast(1.2) brightness(0.7);
+  filter: grayscale(100%) contrast(1.15) brightness(0.6);
   z-index: 1;
+  animation: subtle-zoom 20s ease-in-out infinite alternate;
 }
 
-/* Dark Overlay for Better Text Visibility */
+@keyframes subtle-zoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* Premium Dark Gradient Overlay */
 .landing-dark-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
   z-index: 2;
 }
 
-/* Centered Content (Logo + Button) */
+/* Grain Texture for Luxury Feel */
+.landing-grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+/* Centered Content (Logo + Tagline + Button) */
 .landing-center-content {
   position: absolute;
   top: 50%;
@@ -47,46 +76,83 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 2rem;
 }
 
-/* Brand Logo */
+/* Premium Brand Logo */
 .landing-brand-logo {
-  font-size: clamp(4rem, 12vw, 10rem);
-  font-weight: 300;
-  letter-spacing: 0.4em;
-  color: #ffffff;
+  font-size: clamp(4rem, 12vw, 12rem);
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  color: #FAF9F6;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
-  font-family: 'Playfair Display', serif;
+  text-shadow: 0 8px 40px rgba(0, 0, 0, 0.9);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  will-change: letter-spacing;
+  transition: letter-spacing 1.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* Enter Button */
-.landing-enter-button {
-  font-size: 1.2rem;
-  font-weight: 400;
-  letter-spacing: 0.3em;
-  color: #ffffff;
-  background: transparent;
-  border: 2px solid #ffffff;
-  padding: 1rem 3rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
+/* Luxury Tagline */
+.landing-tagline {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  color: rgba(250, 249, 246, 0.9);
   text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
   font-family: 'Inter', sans-serif;
 }
 
+/* Premium Enter Button */
+.landing-enter-button {
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: #FAF9F6;
+  background: transparent;
+  border: 1.5px solid rgba(250, 249, 246, 0.5);
+  padding: 1.2rem 3.5rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.landing-enter-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.landing-enter-button:hover::before {
+  left: 100%;
+}
+
 .landing-enter-button:hover {
-  background: #ffffff;
+  background: rgba(250, 249, 246, 1);
   color: #000000;
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  border-color: #FAF9F6;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(250, 249, 246, 0.3);
+  letter-spacing: 0.3em;
 }
 
 .landing-enter-button:active {
-  transform: scale(0.98);
+  transform: translateY(0);
+  box-shadow: 0 6px 20px rgba(250, 249, 246, 0.2);
 }
 
 /* Mobile Responsive */
