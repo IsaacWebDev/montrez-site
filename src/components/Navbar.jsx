@@ -76,7 +76,7 @@ export default function Navbar() {
             aria-label="MONTRÉZ Home"
           >
             <img 
-              src="/images/montrez-logo-castle.jpg" 
+              src="/images/montrez-logo-castle.png" 
               alt="MONTRÉZ" 
               className="navbar__logo-image"
             />

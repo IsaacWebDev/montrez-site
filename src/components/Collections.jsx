@@ -99,7 +99,7 @@ export default function Collections() {
         {/* Panther Logo + Load More */}
         <div className="collections__footer">
           <img 
-            src="/images/montrez-logo-panther.jpg" 
+            src="/images/montrez-logo-panther.png" 
             alt="MONTRÉZ"
             className="collections__logo"
           />
