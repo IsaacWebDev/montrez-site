@@ -100,11 +100,10 @@ export default function VideoIntro({ onComplete }) {
         playsInline
         autoPlay
         preload="auto"
-        poster="/images/hero-editorial.jpg"
+        poster="/images/video_20-poster.jpg"
         style={{ opacity: isLoading ? 0 : 1 }}
       >
-        {/* Use compressed video for better performance (398KB vs 822KB) */}
-        <source src="/videos/intro-pexels-compressed.mp4" type="video/mp4" />
+        <source src="/videos/video_20.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       
