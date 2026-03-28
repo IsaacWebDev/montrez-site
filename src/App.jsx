@@ -4,6 +4,7 @@ import { CartProvider } from './context/CartContext'
 import LandingPage from './components/LandingPage'
 import AccessGate from './components/AccessGate'
 import SignupPopup from './components/SignupPopup'
+import IntroAnimation from './components/IntroAnimation'
 import VideoIntro from './components/VideoIntro'
 import VideoIntroStreetwear from './components/VideoIntroStreetwear'
 import LoadingSpinner from './components/LoadingSpinner'
@@ -26,7 +27,7 @@ import OrderConfirmationPage from './pages/OrderConfirmationPage'
 import './styles/theme.css'
 
 function HomePage() {
-  // Four-stage flow: landing → access gate → video → site
+  // Five-stage flow: landing → access gate → luxury intro animation → site
   const [stage, setStage] = useState(() => {
     // Check if user has completed the full entrance sequence
     const hasCompletedEntrance = sessionStorage.getItem('montrez-entrance-complete')
@@ -39,13 +40,13 @@ function HomePage() {
   }
 
   const handleAccessSuccess = () => {
-    // Stage 2 → Stage 3: Show video intro (now compressed!)
-    setStage('video')
+    // Stage 2 → Stage 3: Show luxury intro animation (10s chateau sequence)
+    setStage('intro-animation')
   }
 
-  const handleVideoComplete = () => {
+  const handleIntroComplete = () => {
     // Stage 3 → Stage 4: Show main site
-    // Mark entrance as complete ONLY after video finishes
+    // Mark entrance as complete ONLY after intro animation finishes
     sessionStorage.setItem('montrez-entrance-complete', 'true')
     setStage('site')
     
@@ -69,9 +70,9 @@ function HomePage() {
         <AccessGate onSuccess={handleAccessSuccess} />
       )}
       
-      {/* Stage 3: Video Intro (Ultra-compressed château video - 0.78MB) */}
-      {stage === 'video' && (
-        <VideoIntro onComplete={handleVideoComplete} />
+      {/* Stage 3: Luxury Intro Animation (10s chateau entrance sequence) */}
+      {stage === 'intro-animation' && (
+        <IntroAnimation onComplete={handleIntroComplete} />
       )}
       
       {/* Stage 4: Main Site + Signup Popup */}

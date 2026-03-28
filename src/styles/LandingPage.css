@@ -16,20 +16,43 @@
   opacity: 1;
 }
 
-/* High-Quality Gate Background Image */
+/* High-Quality Fashion Editorial Background Image */
 .landing-background-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/images/landing-gate.jpg');
+  background-image: url('/images/landing-new-bg.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center 40%; /* Focus on subject's torso/studded hood */
   background-repeat: no-repeat;
-  filter: grayscale(100%) contrast(1.15) brightness(0.6);
+  filter: grayscale(100%) contrast(1.25) brightness(0.45);
   z-index: 1;
   animation: subtle-zoom 20s ease-in-out infinite alternate;
+}
+
+/* Desktop optimization - slightly lower to show more of Mercedes/ground */
+@media (min-width: 1200px) {
+  .landing-background-image {
+    background-position: center 45%;
+  }
+}
+
+/* Tablet optimization */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .landing-background-image {
+    background-position: center 38%;
+  }
+}
+
+/* Mobile optimization - center on subject */
+@media (max-width: 767px) {
+  .landing-background-image {
+    background-size: cover;
+    background-position: center 35%;
+    filter: grayscale(100%) contrast(1.2) brightness(0.4); /* Darker on mobile for text readability */
+  }
 }
 
 @keyframes subtle-zoom {
@@ -37,7 +60,7 @@
   100% { transform: scale(1.05); }
 }
 
-/* Premium Dark Gradient Overlay */
+/* Premium Dark Gradient Overlay - Enhanced for Editorial Photo */
 .landing-dark-overlay {
   position: absolute;
   top: 0;
@@ -46,9 +69,10 @@
   height: 100%;
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.7) 100%
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.3) 30%,
+    rgba(0, 0, 0, 0.6) 70%,
+    rgba(0, 0, 0, 0.8) 100%
   );
   z-index: 2;
 }
