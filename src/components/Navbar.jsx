@@ -69,17 +69,15 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* CENTER: Castle Logo */}
+          {/* CENTER: Text Logo */}
           <button 
-            className="navbar__logo"
+            className="navbar__logo navbar__logo--text"
             onClick={handleLogoClick}
             aria-label="MONTRÉZ Home"
           >
-            <img 
-              src="/images/montrez-logo-castle.png" 
-              alt="MONTRÉZ" 
-              className="navbar__logo-image"
-            />
+            <span className="navbar__logo-text">
+              PAS POUR TOUT LE MONDE
+            </span>
           </button>
 
           {/* RIGHT: Search + Cart Icons */}
