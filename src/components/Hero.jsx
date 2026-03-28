@@ -97,7 +97,7 @@ export default function Hero() {
               MONTREZ
             </h1>
             <p className="hero__subtitle">
-              European luxury streetwear. Not for everyone.
+              PAS POUR TOUT LE MONDE
             </p>
             <div className="hero__cta">
               <a href="#collections" className="btn btn-chrome">
