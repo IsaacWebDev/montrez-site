@@ -10,10 +10,10 @@
   padding: var(--space-xl) 0;
   overflow: hidden;
   
-  /* Portrait Editorial Background */
-  background-image: url('/images/hero-editorial.jpg');
+  /* Portrait Editorial Background - Updated */
+  background-image: url('/images/hero-editorial-v2.jpg');
   background-size: cover;
-  background-position: center 35%;
+  background-position: center 40%;
   background-repeat: no-repeat;
   background-color: #000000; /* Fallback solid black */
 }
