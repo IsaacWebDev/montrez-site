@@ -54,7 +54,7 @@ export default function LandingPage({ onEnter }) {
           animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ delay: 0.6, duration: 1 }}
         >
-          European Luxury Streetwear
+          PAS POUR TOUT LE MONDE
         </motion.p>
         
         <motion.button 
