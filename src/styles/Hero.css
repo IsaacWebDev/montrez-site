@@ -100,7 +100,10 @@
   margin-bottom: var(--space-md);
   animation-delay: 0.2s;
   color: #FAF9F6 !important; /* Cream white for premium feel */
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  text-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.9),
+    0 8px 32px rgba(0, 0, 0, 0.8),
+    0 16px 64px rgba(0, 0, 0, 0.6);
   position: relative;
   z-index: 3;
   
@@ -159,38 +162,50 @@
 /* Hero buttons - Premium Luxury CTAs */
 /* Primary CTA: White background with black text (high contrast, luxury) */
 .hero__cta .btn-chrome {
-  background: #ffffff !important;
-  color: #000000 !important;
-  border: 2px solid #ffffff !important;
-  font-weight: 600 !important;
+  background: rgba(250, 249, 246, 0.12) !important;
+  backdrop-filter: blur(15px) !important;
+  color: #FAF9F6 !important;
+  border: 2px solid #FAF9F6 !important;
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+  padding: 1.2rem 3rem !important;
+  letter-spacing: 0.15em !important;
   text-shadow: none !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 .hero__cta .btn-chrome:hover {
-  background: #000000 !important;
-  color: #ffffff !important;
-  border-color: #ffffff !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3) !important;
+  background: #FAF9F6 !important;
+  color: #000 !important;
+  border-color: #FAF9F6 !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 48px rgba(250, 249, 246, 0.3) !important;
 }
 
 /* Secondary CTA: Transparent with white border and text */
 .hero__cta .btn {
-  background: transparent !important;
-  border: 2px solid #ffffff !important;
-  color: #ffffff !important;
+  background: rgba(250, 249, 246, 0.08) !important;
+  backdrop-filter: blur(15px) !important;
+  border: 2px solid #FAF9F6 !important;
+  color: #FAF9F6 !important;
+  font-size: 1.1rem !important;
+  padding: 1.2rem 3rem !important;
+  letter-spacing: 0.15em !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
 }
 
 .hero__cta .btn::before {
-  background: #ffffff !important;
+  background: #FAF9F6 !important;
 }
 
 .hero__cta .btn:hover {
-  background: transparent !important;
-  border-color: #ffffff !important;
-  color: #000000 !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2) !important;
+  background: #FAF9F6 !important;
+  border-color: #FAF9F6 !important;
+  color: #000 !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 48px rgba(250, 249, 246, 0.3) !important;
 }
 
 .hero__scroll {

@@ -33,7 +33,7 @@
   width: 90%;
   max-width: 480px;
   background: #0D0D0D;
-  padding: 3rem 2.5rem;
+  padding: 3.5rem 2.5rem;
   z-index: 10;
   box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
 }
@@ -80,17 +80,20 @@
 }
 
 .access-option-title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: #FAF9F6;
   margin: 0 0 0.5rem 0;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 
 .access-option-desc {
-  font-size: 0.875rem;
-  color: #888;
+  font-size: 0.95rem;
+  color: rgba(250, 249, 246, 0.85);
   margin: 0;
+  letter-spacing: 0.05em;
 }
 
 /* Instagram Option */
@@ -132,24 +135,25 @@
 
 .password-input {
   width: 100%;
-  padding: 0.875rem 1rem;
-  background: #0D0D0D;
-  border: 1px solid #333;
-  color: #FFFFFF;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(250, 249, 246, 0.3);
+  color: #FAF9F6;
   font-size: 1rem;
   font-family: 'Inter', sans-serif;
   margin-bottom: 0.5rem;
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
 }
 
 .password-input::placeholder {
-  color: #555;
+  color: rgba(250, 249, 246, 0.4);
 }
 
 .password-input:focus {
   outline: none;
-  border-color: #FFFFFF;
-  background: #111;
+  border-color: #FAF9F6;
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .password-input.error {
@@ -192,18 +196,23 @@
 }
 
 .password-submit {
-  background: #FFFFFF;
-  color: #000000;
+  background: transparent;
+  color: #FAF9F6;
+  border: 1.5px solid #FAF9F6;
+  padding: 1rem 2.5rem;
 }
 
 .password-submit:hover:not(:disabled) {
-  background: #F0F0F0;
+  background: #FAF9F6;
+  color: #000;
   transform: translateY(-2px);
 }
 
 .password-submit:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  border-color: #666;
+  color: #666;
 }
 
 .password-cancel {
