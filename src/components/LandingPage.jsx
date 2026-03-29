@@ -32,15 +32,21 @@ export default function LandingPage({ onEnter }) {
       {/* Animated Content (Logo + Tagline + Button) */}
       <motion.div 
         className="landing-center-content"
+        initial={{ 
+          opacity: 0,
+          x: '-50%',
+          y: '-50%'
+        }}
+        animate={{ 
+          opacity: isVisible ? 1 : 0,
+          x: '-50%',
+          y: '-50%'
+        }}
         style={{
           position: 'absolute',
           top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          right: 'auto'
+          left: '50%'
         }}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: isVisible ? 1 : 0 }}
         transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
       >
         <motion.h1 
