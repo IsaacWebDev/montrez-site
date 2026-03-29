@@ -21,7 +21,6 @@ import Cart from './components/Cart'
 import Shop from './pages/Shop'
 import CollectionsPage from './pages/CollectionsPage'
 import ProductDetail from './components/ProductDetail'
-import AboutPage from './pages/AboutPage'
 import ContactPage from './pages/ContactPage'
 import CheckoutPage from './pages/CheckoutPage'
 import OrderConfirmationPage from './pages/OrderConfirmationPage'
@@ -164,19 +163,7 @@ function AppRoutes() {
               </motion.div>
             } 
           />
-          <Route 
-            path="/about" 
-            element={
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-              >
-                <AboutPage />
-              </motion.div>
-            } 
-          />
+
           <Route 
             path="/contact" 
             element={

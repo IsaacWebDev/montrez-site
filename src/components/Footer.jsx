@@ -17,7 +17,6 @@ export default function Footer() {
             </div>
             <div className="footer__column">
               <h4>Company</h4>
-              <a href="#about">About</a>
               <a href="#contact">Contact</a>
               <a href="/admin">Admin</a>
             </div>

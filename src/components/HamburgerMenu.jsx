@@ -44,7 +44,6 @@ export default function HamburgerMenu({ isOpen, onClose }) {
   const links = [
     { label: 'Home', path: '/' },
     { label: 'Shop', path: '/shop' },
-    { label: 'About', hash: '#about' },
     { label: 'Contact', hash: '#contact' }
   ]
 
