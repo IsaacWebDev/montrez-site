@@ -32,7 +32,7 @@ export default function AboutPage() {
             >
               <h2>Our Philosophy</h2>
               <p>
-                MONTRÉZ embodies the essence of European luxury streetwear—where 
+                MONTREZ embodies the essence of European luxury streetwear—where 
                 French aristocratic heritage meets contemporary urban edge. "PAS POUR TOUT LE MONDE" 
                 isn't just our tagline; it's a statement of intent.
               </p>

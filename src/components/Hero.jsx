@@ -94,7 +94,7 @@ export default function Hero() {
         <div className="hero__content container">
           <div className="hero__text fade-in">
             <h1 className="hero__title">
-              MONTRÉZ
+              MONTREZ
             </h1>
             <p className="hero__subtitle">
               PAS POUR TOUT LE MONDE

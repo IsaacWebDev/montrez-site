@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__content">
           <div className="footer__brand">
-            <h3 className="footer__logo">MONTRÉZ</h3>
+            <h3 className="footer__logo">MONTREZ</h3>
             <p>Luxury redefined for the modern era</p>
           </div>
 

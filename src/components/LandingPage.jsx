@@ -58,7 +58,7 @@ export default function LandingPage({ onEnter }) {
           }}
           transition={{ duration: 1.5, ease: 'easeOut' }}
         >
-          MONTRÉZ
+          MONTREZ
         </motion.h1>
         
         <motion.p 

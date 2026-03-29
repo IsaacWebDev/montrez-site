@@ -240,7 +240,7 @@
       "price": 1600,
       "currency": "USD",
       "category": "Outerwear",
-      "description": "Royal scrollwork meets split branding. Cream heavyweight fleece adorned with black baroque filigree down both sleeves. MON-TRÃ‰Z label patches flank the cursive monogram. Crystal starburst pockets. 'MONTRÉZ Is The Dream' woven at the hem. Structured hood. European luxury in hoodie form.",
+      "description": "Royal scrollwork meets split branding. Cream heavyweight fleece adorned with black baroque filigree down both sleeves. MON-TRÃ‰Z label patches flank the cursive monogram. Crystal starburst pockets. 'MONTREZ Is The Dream' woven at the hem. Structured hood. European luxury in hoodie form.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "images": [
         "/products/baroque-hoodie-ivory-front.jpg"
@@ -257,7 +257,7 @@
       "price": 1800,
       "currency": "USD",
       "category": "Outerwear",
-      "description": "When pearls meet puffer. Cream sherpa fleece with cascading hand-applied faux pearls spelling MONTRÉZ in cursive script. Hood completely encrusted in multi-sized pearl clusters. Quilted puffer sleeves. Cropped silhouette. This is not outerwearâ€”this is a statement of excess. For those who wear opulence.",
+      "description": "When pearls meet puffer. Cream sherpa fleece with cascading hand-applied faux pearls spelling MONTREZ in cursive script. Hood completely encrusted in multi-sized pearl clusters. Quilted puffer sleeves. Cropped silhouette. This is not outerwearâ€”this is a statement of excess. For those who wear opulence.",
       "sizes": ["S", "M", "L", "XL"],
       "images": [
         "/products/pearl-sherpa-puffer-cream-front.jpg"
@@ -291,7 +291,7 @@
       "price": 1700,
       "currency": "USD",
       "category": "Outerwear",
-      "description": "Tonal elegance. Pure white French terry with MONTRÉZ cursive script hand-applied in cream pearls. Hood cascades with multi-sized pearl clusters. Wrist accents in graduated scatter. Silver metal zipper. Monochrome luxury. Minimal body, maximum impact. For those who speak softly and carry opulence.",
+      "description": "Tonal elegance. Pure white French terry with MONTREZ cursive script hand-applied in cream pearls. Hood cascades with multi-sized pearl clusters. Wrist accents in graduated scatter. Silver metal zipper. Monochrome luxury. Minimal body, maximum impact. For those who speak softly and carry opulence.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "images": [
         "/products/pearl-zip-hoodie-white-front.jpg"
@@ -308,7 +308,7 @@
       "price": 1750,
       "currency": "USD",
       "category": "Outerwear",
-      "description": "Maximalist romance. Bubblegum pink heavyweight fleece with MONTRÉZ pearl script on chest AND both sleevesâ€”the most embellished iteration. Hood densely encrusted with pearls. Split pockets. Garment-dyed luxury. This is not subtle. This is a statement. For those who refuse to blend in.",
+      "description": "Maximalist romance. Bubblegum pink heavyweight fleece with MONTREZ pearl script on chest AND both sleevesâ€”the most embellished iteration. Hood densely encrusted with pearls. Split pockets. Garment-dyed luxury. This is not subtle. This is a statement. For those who refuse to blend in.",
       "sizes": ["S", "M", "L", "XL"],
       "images": [
         "/products/pearl-zip-hoodie-pink-front.jpg"
@@ -342,7 +342,7 @@
       "price": 1850,
       "currency": "USD",
       "category": "Outerwear",
-      "description": "Gothic opulence meets streetwear. Heather grey fleece with Old English MONTRÉZ script in gleaming silver crystal on chest and both sleeves. All-over micro-rhinestone scatter creates subtle sparkle. Tan faux fur-lined hood. Custom chrome nameplate zipper pull. Oversized heavyweight silhouette. This is the throne piece.",
+      "description": "Gothic opulence meets streetwear. Heather grey fleece with Old English MONTREZ script in gleaming silver crystal on chest and both sleeves. All-over micro-rhinestone scatter creates subtle sparkle. Tan faux fur-lined hood. Custom chrome nameplate zipper pull. Oversized heavyweight silhouette. This is the throne piece.",
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "images": [
         "/products/frost-gothic-hoodie-grey-front.jpg"
@@ -439,4 +439,5 @@
     }
   ]
 }
+
 

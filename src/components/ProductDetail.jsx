@@ -10,7 +10,7 @@ import '../styles/ProductDetail.css'
 const PRODUCTS = [
   {
     id: 'speak-no-evil',
-    name: 'MONTRÉZ "SPEAK NO EVIL" GRAPHIC T-SHIRT',
+    name: 'MONTREZ "SPEAK NO EVIL" GRAPHIC T-SHIRT',
     price: 600,
     images: [
       'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800',
@@ -22,7 +22,7 @@ const PRODUCTS = [
   },
   {
     id: 'army-74-shorts',
-    name: 'MONTRÉZ "ARMY 74" SHORTS',
+    name: 'MONTREZ "ARMY 74" SHORTS',
     price: 1000,
     images: ['https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=800'],
     sizes: ['S', 'M', 'L', 'XL'],
@@ -31,7 +31,7 @@ const PRODUCTS = [
   },
   {
     id: 'money-tee',
-    name: 'MONTRÉZ "MONEY" GRAPHIC T-SHIRT',
+    name: 'MONTREZ "MONEY" GRAPHIC T-SHIRT',
     price: 600,
     images: ['https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=800'],
     sizes: ['S', 'M', 'L', 'XL'],
@@ -40,7 +40,7 @@ const PRODUCTS = [
   },
   {
     id: 'architect-hoodie-black',
-    name: 'MONTRÉZ ARCHITECT ZIP HOODIE - BLACK',
+    name: 'MONTREZ ARCHITECT ZIP HOODIE - BLACK',
     price: 1500,
     images: ['https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800'],
     sizes: ['S', 'M', 'L', 'XL'],

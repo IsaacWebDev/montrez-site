@@ -181,7 +181,7 @@ export default function PasswordEmailModal({ onSuccess }) {
           transition={{ duration: 0.3 }}
         >
           <div className="password-modal__content">
-            <h2 className="password-modal__title">MONTRÉZ</h2>
+            <h2 className="password-modal__title">MONTREZ</h2>
             
             {mode === 'choice' && (
               <>
