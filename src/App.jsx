@@ -70,9 +70,9 @@ function HomePage() {
         <AccessGate onSuccess={handleAccessSuccess} />
       )}
       
-      {/* Stage 3: Luxury Intro Animation (10s chateau entrance sequence) */}
+      {/* Stage 3: Video Intro */}
       {stage === 'intro-animation' && (
-        <IntroAnimation onComplete={handleIntroComplete} />
+        <VideoIntro onComplete={handleIntroComplete} />
       )}
       
       {/* Stage 4: Main Site + Signup Popup */}
