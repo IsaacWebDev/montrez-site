@@ -106,14 +106,6 @@ export default function VideoIntro({ onComplete }) {
         <source src="/videos/video_20.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      
-      <div className="video-intro__overlay grain" />
-      
-      <div className="video-intro__branding">
-        <h1 className="video-intro__logo">MONTREZ</h1>
-      </div>
-
-
     </div>
   )
 }
