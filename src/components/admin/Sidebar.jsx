@@ -54,7 +54,7 @@ export default function Sidebar() {
         <div className="flex flex-col h-full">
           {/* Logo */}
           <div className="p-6 border-b border-border">
-            <h1 className="text-2xl font-bold text-primary">MONTREZ</h1>
+            <h1 className="text-2xl font-bold text-primary">MONTRÉZ</h1>
             <p className="text-sm text-muted-foreground mt-1">Admin Dashboard</p>
           </div>
 

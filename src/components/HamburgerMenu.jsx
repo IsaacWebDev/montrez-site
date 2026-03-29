@@ -101,7 +101,7 @@ export default function HamburgerMenu({ isOpen, onClose }) {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              <p className="hamburger-tagline">Pas pour Tout</p>
+              <p className="hamburger-tagline">PAS POUR TOUT LE MONDE</p>
               <div className="hamburger-social">
                 <a href="https://instagram.com/montrezofficial" target="_blank" rel="noopener noreferrer">
                   Instagram

@@ -72,7 +72,7 @@ export default function AccessGate({ onSuccess }) {
       <div className="access-gate-background" />
       
       <div className="access-card">
-        <h1 className="access-logo">MONTREZ</h1>
+        <h1 className="access-logo">MONTRÉZ</h1>
         <p className="access-subtitle">ACCESS REQUIRED</p>
         
         {/* Option 1: Password */}

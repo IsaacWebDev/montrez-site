@@ -57,7 +57,7 @@ export default function PasswordModal({ onSuccess }) {
       
       <div className="password-modal">
         <div className="password-modal__content">
-          <h2 className="password-modal__title">MONTREZ</h2>
+          <h2 className="password-modal__title">MONTRÉZ</h2>
           <p className="password-modal__subtitle">Enter Password</p>
           
           <form onSubmit={handleSubmit} className="password-modal__form">

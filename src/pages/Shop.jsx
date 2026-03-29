@@ -122,7 +122,7 @@ export default function Shop() {
           {/* Header */}
           <div className="shop__header">
             <h1 className="shop__title">Shop</h1>
-            <p className="shop__subtitle">Pas pour Tout</p>
+            <p className="shop__subtitle">PAS POUR TOUT LE MONDE</p>
             {searchQuery && (
               <p className="shop__search-info">
                 Search results for "{searchQuery}" ({filteredProducts.length} found)

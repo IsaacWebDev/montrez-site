@@ -167,7 +167,7 @@ export default function Navbar() {
               </nav>
 
               <div className="navbar__menu-footer">
-                <p className="navbar__menu-tagline">Pas pour Tout</p>
+                <p className="navbar__menu-tagline">PAS POUR TOUT LE MONDE</p>
               </div>
             </motion.div>
           </>

@@ -109,7 +109,7 @@ export default function IntroAnimation({ onComplete }) {
         }}
         transition={{ duration: 1.5 }}
       >
-        <h1 className="intro-logo-text">MONTREZ</h1>
+        <h1 className="intro-logo-text">MONTRÉZ</h1>
       </motion.div>
 
       {/* Fade to White Transition */}

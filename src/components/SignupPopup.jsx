@@ -112,7 +112,7 @@ export default function SignupPopup() {
               <circle cx="12" cy="12" r="10" stroke="#10B981" strokeWidth="2"/>
               <path d="M8 12L11 15L16 9" stroke="#10B981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            <h3>Welcome to MONTREZ!</h3>
+            <h3>Welcome to MONTRÉZ!</h3>
             <p>Check your email for your 15% discount code</p>
           </div>
         )}

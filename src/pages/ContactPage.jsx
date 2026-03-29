@@ -91,7 +91,7 @@ export default function ContactPage() {
 
               <div className="contact-page__note">
                 <p>
-                  <strong>Pas pour Tout</strong><br />
+                  <strong>PAS POUR TOUT LE MONDE</strong><br />
                   We respond to serious inquiries only.
                 </p>
               </div>

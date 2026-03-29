@@ -18,7 +18,7 @@ export default function AboutPage() {
           {/* Hero Section */}
           <div className="about-page__hero">
             <h1 className="about-page__title">MONTREZ</h1>
-            <p className="about-page__tagline">Pas pour Tout</p>
+            <p className="about-page__tagline">PAS POUR TOUT LE MONDE</p>
           </div>
 
           {/* Story */}
@@ -32,8 +32,8 @@ export default function AboutPage() {
             >
               <h2>Our Philosophy</h2>
               <p>
-                MONTREZ embodies the essence of European luxury streetwear—where 
-                French aristocratic heritage meets contemporary urban edge. "Pas pour Tout" 
+                MONTRÉZ embodies the essence of European luxury streetwear—where 
+                French aristocratic heritage meets contemporary urban edge. "PAS POUR TOUT LE MONDE" 
                 isn't just our tagline; it's a statement of intent.
               </p>
               <p>
