@@ -23,7 +23,7 @@ export default function AnnouncementBar() {
     <div className="announcement-bar">
       <div className="announcement-bar__content">
         <p className="announcement-bar__text">
-          🔥 FREE DELIVERY OVER R1,000 <span className="announcement-bar__separator">//</span> USE CODE: <span className="announcement-bar__code">MONTREZ25</span>
+          Free Delivery Over R1,000 <span className="announcement-bar__divider">•</span> Use Code: <strong className="announcement-bar__code">MONTREZ25</strong>
         </p>
         <button 
           className="announcement-bar__close"

@@ -44,13 +44,15 @@
 .footer__column a {
   display: block;
   margin-bottom: 0.75rem;
-  color: var(--mid-grey);
+  color: #000;
   font-size: 0.95rem;
-  transition: color var(--transition-fast);
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 .footer__column a:hover {
-  color: var(--black);
+  color: #666;
+  text-decoration: underline;
 }
 
 .footer__bottom {
