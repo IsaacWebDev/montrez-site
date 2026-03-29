@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 import { CartProvider } from './context/CartContext'
 import LandingPage from './components/LandingPage'
 import AccessGate from './components/AccessGate'
@@ -25,6 +26,7 @@ import ContactPage from './pages/ContactPage'
 import CheckoutPage from './pages/CheckoutPage'
 import OrderConfirmationPage from './pages/OrderConfirmationPage'
 import './styles/theme.css'
+import './styles/animations.css'
 
 function HomePage() {
   // Five-stage flow: landing → access gate → luxury intro animation → site
@@ -120,29 +122,115 @@ function AppRoutes() {
     <>
       {isTransitioning && <LoadingSpinner message="Loading..." />}
       {location.pathname !== '/' && <AnnouncementBar />}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/shop" element={<Shop />} />
-        <Route path="/collections" element={<CollectionsPage />} />
-        <Route path="/product/:id" element={<ProductDetail />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/checkout" element={<CheckoutPage />} />
-        <Route path="/order/:orderId" element={<OrderConfirmationPage />} />
-        <Route 
-          path="/admin/*" 
-          element={
-            <div style={{ 
-              position: 'relative', 
-              zIndex: 1001,
-              minHeight: '100vh',
-              background: 'white'
-            }}>
-              <Admin />
-            </div>
-          } 
-        />
-      </Routes>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<HomePage />} />
+          <Route 
+            path="/shop" 
+            element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <Shop />
+              </motion.div>
+            } 
+          />
+          <Route 
+            path="/collections" 
+            element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <CollectionsPage />
+              </motion.div>
+            } 
+          />
+          <Route 
+            path="/product/:id" 
+            element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <ProductDetail />
+              </motion.div>
+            } 
+          />
+          <Route 
+            path="/about" 
+            element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <AboutPage />
+              </motion.div>
+            } 
+          />
+          <Route 
+            path="/contact" 
+            element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <ContactPage />
+              </motion.div>
+            } 
+          />
+          <Route 
+            path="/checkout" 
+            element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <CheckoutPage />
+              </motion.div>
+            } 
+          />
+          <Route 
+            path="/order/:orderId" 
+            element={
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <OrderConfirmationPage />
+              </motion.div>
+            } 
+          />
+          <Route 
+            path="/admin/*" 
+            element={
+              <div style={{ 
+                position: 'relative', 
+                zIndex: 1001,
+                minHeight: '100vh',
+                background: 'white'
+              }}>
+                <Admin />
+              </div>
+            } 
+          />
+        </Routes>
+      </AnimatePresence>
     </>
   )
 }
